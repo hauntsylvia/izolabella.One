@@ -1,6 +1,6 @@
 ﻿using izolabella.Storage.Objects.DataStores;
 
-namespace izolabella.CompetitiveCounting.Platform.Objects.Constants
+namespace izolabella.One.Objects.Constants
 {
     internal static class DataStores
     {

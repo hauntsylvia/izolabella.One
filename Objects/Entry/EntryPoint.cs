@@ -1,14 +1,15 @@
 ﻿using Discord.WebSocket;
-using izolabella.CompetitiveCounting.Bot.Objects.CCB_Structures.Startup;
-using izolabella.CompetitiveCounting.Bot.Objects.Clients;
-using izolabella.CompetitiveCounting.Platform.Objects.Controllers;
+using Kaia.Bot.Objects.CCB_Structures.Startup;
+using Kaia.Bot.Objects.Clients;
+using izolabella.One.Objects.Constants;
+using izolabella.One.Objects.Controllers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace izolabella.CompetitiveCounting.Platform.Objects.Entry
+namespace izolabella.One.Objects.Entry
 {
     internal static class EntryPoint
     {
@@ -20,12 +21,12 @@ namespace izolabella.CompetitiveCounting.Platform.Objects.Entry
         public static async Task<CCBotController> EnterAsync(DiscordSocketConfig Configuration)
         {
             List<CCBStartupInformation> StartupInformation = await GetStartupProfilesAsync();
-            if(StartupInformation.Count == 0)
+            if (StartupInformation.Count == 0)
             {
                 Console.WriteLine("Write the token.");
                 string? Token = Console.ReadLine();
                 Console.Clear();
-                if(Token != null)
+                if (Token != null)
                 {
                     CCBStartupInformation NewInfo = new(Token);
                     StartupInformation.Add(NewInfo);

@@ -1,10 +1,13 @@
-﻿global using izolabella.CompetitiveCounting.Platform.Objects.Constants;
+﻿global using Kaia.Bot.Objects.Clients;
+global using Kaia.Bot.Objects.CCB_Structures.Guilds;
+global using Kaia.Bot.Objects.CCB_Structures.Users;
+global using Kaia.Bot.Objects.CCB_Structures.Derivations;
+global using Kaia.Bot.Objects.CCB_Structures.Startup;
 
-using izolabella.CompetitiveCounting.Bot.Objects.Clients;
-using izolabella.CompetitiveCounting.Platform.Objects.Controllers;
-using izolabella.CompetitiveCounting.Platform.Objects.Entry;
+using izolabella.One.Objects.Controllers;
+using izolabella.One.Objects.Entry;
 
-namespace izolabella.CompetitiveCounting.Platform
+namespace izolabella.One
 {
     internal class Program
     {

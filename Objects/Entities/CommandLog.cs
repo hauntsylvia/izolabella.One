@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace izolabella.CompetitiveCounting.Platform.Objects.Entities
+namespace izolabella.One.Objects.Entities
 {
     [JsonObject(MemberSerialization.OptIn)]
     public class CommandLog : IDataStoreEntity

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace izolabella.CompetitiveCounting.Platform.Objects.Constants
+namespace izolabella.One.Objects.Constants
 {
     internal static class Strings
     {
