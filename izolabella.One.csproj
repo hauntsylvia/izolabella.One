@@ -15,9 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\izolabella.CompetitiveCounting.Bot\izolabella.CompetitiveCounting.Bot\izolabella.CompetitiveCounting.Bot.csproj">
-      <Private>True</Private>
-    </ProjectReference>
+    <ProjectReference Include="..\kaia.Bot\kaia.Bot\Kaia.Bot.csproj" />
   </ItemGroup>
 
 </Project>
