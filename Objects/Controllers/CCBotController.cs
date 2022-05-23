@@ -1,9 +1,17 @@
 ﻿using izolabella.CompetitiveCounting.Bot.Objects.Clients;
+using izolabella.CompetitiveCounting.Platform.Objects.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using izolabella.Discord.Objects.Enums;
+using izolabella.Discord.Objects.Arguments;
+using izolabella.Discord.Objects.Constraints.Interfaces;
+using izolabella.Discord.Objects.Parameters;
+using izolabella.CompetitiveCounting.Bot.Objects.Discord.Embeds.Implementations;
+using Discord.WebSocket;
+using izolabella.Discord.Objects.Constraints.Implementations;
 
 namespace izolabella.CompetitiveCounting.Platform.Objects.Controllers
 {
@@ -18,13 +26,19 @@ namespace izolabella.CompetitiveCounting.Platform.Objects.Controllers
 
         internal async Task StartController()
         {
-            this.Client.Parameters.CommandHandler.OnCommandConstraint += this.Wrapper_OnCommandConstraint;
+            this.Client.Parameters.CommandHandler.OnCommandConstraint += this.OnCommandConstraintAsync;
             await this.Client.Parameters.StartAsync();
         }
 
-        private Task Wrapper_OnCommandConstraint(Discord.Objects.Arguments.CommandContext Context, Discord.Objects.Parameters.IzolabellaCommandArgument[] Arguments, Discord.Objects.Constraints.Interfaces.IIzolabellaCommandConstraint ConstraintThatFailed)
+        private async Task OnCommandConstraintAsync(CommandContext Context, IzolabellaCommandArgument[] Arguments, IIzolabellaCommandConstraint ConstraintThatFailed)
         {
-            throw new NotImplementedException();
+            await DataStores.ConstrainmentStore.SaveAsync(new CommandLog(Context.UserContext.User.Id));
+            await Context.UserContext.RespondAsync(
+                embed:
+                    ConstraintThatFailed.Type == ConstraintTypes.WhitelistPermissions && Context.UserContext.User is SocketGuildUser SUser && ConstraintThatFailed is WhitelistPermissionsConstraint WPC ?
+                        new CommandConstrainedByPermissions(Context.UserContext.CommandName, SUser.GuildPermissions, WPC.Permissions).Build()
+                        : null,
+                text: Strings.Responses.CommandConstrained);
         }
     }
 }
