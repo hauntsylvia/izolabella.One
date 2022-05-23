@@ -12,6 +12,8 @@ using izolabella.Discord.Objects.Parameters;
 using izolabella.CompetitiveCounting.Bot.Objects.Discord.Embeds.Implementations;
 using Discord.WebSocket;
 using izolabella.Discord.Objects.Constraints.Implementations;
+using Discord;
+using izolabella.CompetitiveCounting.Bot.Objects.Discord.Embeds.Base;
 
 namespace izolabella.CompetitiveCounting.Platform.Objects.Controllers
 {
@@ -33,11 +35,20 @@ namespace izolabella.CompetitiveCounting.Platform.Objects.Controllers
         private async Task OnCommandConstraintAsync(CommandContext Context, IzolabellaCommandArgument[] Arguments, IIzolabellaCommandConstraint ConstraintThatFailed)
         {
             await DataStores.ConstrainmentStore.SaveAsync(new CommandLog(Context.UserContext.User.Id));
+            CCBEmbed Builder = new CommandConstrainedByUserIds(Context.UserContext.CommandName);
+            if(Context.UserContext.User is SocketGuildUser SUser)
+            {
+                if(ConstraintThatFailed is WhitelistPermissionsConstraint WPC)
+                {
+                    Builder = new CommandConstrainedByPermissions(Context.UserContext.CommandName, SUser.GuildPermissions, WPC.Permissions);
+                }
+                else if(ConstraintThatFailed is WhitelistRolesConstraint RPC)
+                {
+                    Builder = new CommandConstrainedByRoleIds(Context.UserContext.CommandName, SUser.Guild, RPC.RoleIds);
+                }
+            }
             await Context.UserContext.RespondAsync(
-                embed:
-                    ConstraintThatFailed.Type == ConstraintTypes.WhitelistPermissions && Context.UserContext.User is SocketGuildUser SUser && ConstraintThatFailed is WhitelistPermissionsConstraint WPC ?
-                        new CommandConstrainedByPermissions(Context.UserContext.CommandName, SUser.GuildPermissions, WPC.Permissions).Build()
-                        : null,
+                embed: Builder.Build(),
                 text: Strings.Responses.CommandConstrained);
         }
     }
