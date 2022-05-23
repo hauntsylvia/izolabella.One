@@ -1,15 +1,16 @@
 ﻿global using izolabella.CompetitiveCounting.Platform.Objects.Constants;
 
 using izolabella.CompetitiveCounting.Bot.Objects.Clients;
+using izolabella.CompetitiveCounting.Platform.Objects.Controllers;
 using izolabella.CompetitiveCounting.Platform.Objects.Entry;
 
 namespace izolabella.CompetitiveCounting.Platform
 {
     internal class Program
     {
-        internal static async Task Main(string[] args)
+        internal static async Task Main()
         {
-            EntryPoint Entry = await EntryPoint.BuildEntryPoint(new()
+            CCBotController InternalController = await EntryPoint.EnterAsync(new()
             {
                 UseSystemClock = false,
                 MessageCacheSize = 20,
@@ -18,6 +19,7 @@ namespace izolabella.CompetitiveCounting.Platform
                 AlwaysResolveStickers = true,
                 UseInteractionSnowflakeDate = false,
             });
+            await InternalController.StartController();
             await Task.Delay(-1);
         }
     }

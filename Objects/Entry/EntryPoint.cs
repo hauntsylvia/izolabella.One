@@ -1,6 +1,7 @@
 ﻿using Discord.WebSocket;
 using izolabella.CompetitiveCounting.Bot.Objects.CCB_Structures.Startup;
 using izolabella.CompetitiveCounting.Bot.Objects.Clients;
+using izolabella.CompetitiveCounting.Platform.Objects.Controllers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,21 +10,14 @@ using System.Threading.Tasks;
 
 namespace izolabella.CompetitiveCounting.Platform.Objects.Entry
 {
-    internal class EntryPoint
+    internal static class EntryPoint
     {
-        private EntryPoint(CompetitiveCountingBot Client)
-        {
-            this.Client = Client;
-        }
-
-        internal CompetitiveCountingBot Client { get; }
-
         private static async Task<List<CCBStartupInformation>> GetStartupProfilesAsync()
         {
             return await DataStores.StartupStore.ReadAllAsync<CCBStartupInformation>();
         }
 
-        public static async Task<EntryPoint> BuildEntryPoint(DiscordSocketConfig Configuration)
+        public static async Task<CCBotController> EnterAsync(DiscordSocketConfig Configuration)
         {
             List<CCBStartupInformation> StartupInformation = await GetStartupProfilesAsync();
             if(StartupInformation.Count == 0)
@@ -38,9 +32,7 @@ namespace izolabella.CompetitiveCounting.Platform.Objects.Entry
                     await DataStores.StartupStore.SaveAsync(NewInfo);
                 }
             }
-            EntryPoint Entry = new(new(new(Configuration, StartupInformation.First().Token)));
-            await Entry.Client.Parameters.StartAsync();
-            return Entry;
+            return new CCBotController(new(new(Configuration, StartupInformation.First().Token)));
         }
     }
 }
