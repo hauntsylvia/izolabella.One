@@ -28,7 +28,7 @@ namespace izolabella.One.Objects.Entry
                 Console.Clear();
                 if (Token != null)
                 {
-                    CCBStartupInformation NewInfo = new(Token);
+                    CCBStartupInformation NewInfo = new(DataStores.StartupStore, Token);
                     StartupInformation.Add(NewInfo);
                     await DataStores.StartupStore.SaveAsync(NewInfo);
                 }

@@ -12,20 +12,20 @@ using Discord.WebSocket;
 using izolabella.Discord.Objects.Constraints.Implementations;
 using Discord;
 using izolabella.One.Objects.Constants;
-using Kaia.Bot.Objects.Discord.Embeds.Base;
 using Kaia.Bot.Objects.Clients;
 using izolabella.One.Objects.Entities;
+using Kaia.Bot.Objects.Discord.Embeds.Bases;
 
 namespace izolabella.One.Objects.Controllers
 {
     internal class CCBotController
     {
-        internal CCBotController(CompetitiveCountingBot Client)
+        internal CCBotController(KaiaBot Client)
         {
             this.Client = Client;
         }
 
-        internal CompetitiveCountingBot Client { get; }
+        internal KaiaBot Client { get; }
 
         internal async Task StartController()
         {
@@ -36,12 +36,12 @@ namespace izolabella.One.Objects.Controllers
         private async Task OnCommandConstraintAsync(CommandContext Context, IzolabellaCommandArgument[] Arguments, IIzolabellaCommandConstraint ConstraintThatFailed)
         {
             await DataStores.ConstrainmentStore.SaveAsync(new CommandLog(Context.UserContext.User.Id));
-            CCBEmbed Builder = new CommandConstrainedByUserIds(Context.UserContext.CommandName);
+            CCBPathEmbed Builder = new CommandConstrainedByUserIds(Kaia.Bot.Objects.Constants.Strings.EmbedStrings.PathIfNoGuild, Context.UserContext.CommandName);
             if (Context.UserContext.User is SocketGuildUser SUser)
             {
                 if (ConstraintThatFailed is WhitelistPermissionsConstraint WPC)
                 {
-                    Builder = new CommandConstrainedByPermissions(Context.UserContext.CommandName, SUser.GuildPermissions, WPC.Permissions);
+                    Builder = new CommandConstrainedByPermissions(SUser.Guild.Name, Context.UserContext.CommandName, SUser.GuildPermissions, WPC.Permissions);
                 }
                 else if (ConstraintThatFailed is WhitelistRolesConstraint RPC)
                 {
