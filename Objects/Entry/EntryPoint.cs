@@ -33,7 +33,7 @@ namespace izolabella.One.Objects.Entry
                     await DataStores.StartupStore.SaveAsync(NewInfo);
                 }
             }
-            return new CCBotController(new(new(Configuration, StartupInformation.First().Token)));
+            return new CCBotController(new(new(Configuration, false, StartupInformation.First().Token)));
         }
     }
 }
