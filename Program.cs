@@ -2,6 +2,8 @@
 global using Kaia.Bot.Objects.Clients;
 using izolabella.One.Objects.Controllers;
 using izolabella.One.Objects.Entry;
+using System.Reflection;
+using izolabella.Discord.Objects.Interfaces;
 
 namespace izolabella.One
 {

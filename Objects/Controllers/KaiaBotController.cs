@@ -7,6 +7,7 @@ using izolabella.One.Objects.Constants;
 using izolabella.One.Objects.Entities;
 using Kaia.Bot.Objects.Discord.Embeds.Bases;
 using Kaia.Bot.Objects.Discord.Embeds.Implementations;
+using Kaia.Bot.Objects.Discord.Embeds.Implementations.CommandConstrained;
 
 namespace izolabella.One.Objects.Controllers
 {
@@ -28,7 +29,7 @@ namespace izolabella.One.Objects.Controllers
         private async Task OnCommandConstraintAsync(CommandContext Context, IzolabellaCommandArgument[] Arguments, IIzolabellaCommandConstraint ConstraintThatFailed)
         {
             await DataStores.ConstrainmentStore.SaveAsync(new CommandLog(Context.UserContext.User.Id));
-            KaiaPathEmbed Builder = new CommandConstrainedByUserIds(Kaia.Bot.Objects.Constants.Strings.EmbedStrings.PathIfNoGuild, Context.UserContext.CommandName);
+            KaiaPathEmbed Builder = new CommandConstrainedByUserIds(Kaia.Bot.Objects.Constants.Strings.EmbedStrings.FakePaths.Global, Context.UserContext.CommandName);
             if (Context.UserContext.User is SocketGuildUser SUser)
             {
                 if (ConstraintThatFailed is WhitelistPermissionsConstraint WPC)
