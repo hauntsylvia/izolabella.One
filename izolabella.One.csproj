@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\kaia.Bot\kaia.Bot\Kaia.Bot.csproj" />
+    <ProjectReference Include="..\kaia.Bot\Kaia.Bot.csproj" />
   </ItemGroup>
 
 </Project>

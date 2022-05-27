@@ -1,26 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using izolabella.Discord.Objects.Enums;
+﻿using Discord.WebSocket;
 using izolabella.Discord.Objects.Arguments;
+using izolabella.Discord.Objects.Constraints.Implementations;
 using izolabella.Discord.Objects.Constraints.Interfaces;
 using izolabella.Discord.Objects.Parameters;
-using Kaia.Bot.Objects.Discord.Embeds.Implementations;
-using Discord.WebSocket;
-using izolabella.Discord.Objects.Constraints.Implementations;
-using Discord;
 using izolabella.One.Objects.Constants;
-using Kaia.Bot.Objects.Clients;
 using izolabella.One.Objects.Entities;
 using Kaia.Bot.Objects.Discord.Embeds.Bases;
+using Kaia.Bot.Objects.Discord.Embeds.Implementations;
 
 namespace izolabella.One.Objects.Controllers
 {
-    internal class CCBotController
+    internal class KaiaBotController
     {
-        internal CCBotController(KaiaBot Client)
+        internal KaiaBotController(KaiaBot Client)
         {
             this.Client = Client;
         }
@@ -36,7 +28,7 @@ namespace izolabella.One.Objects.Controllers
         private async Task OnCommandConstraintAsync(CommandContext Context, IzolabellaCommandArgument[] Arguments, IIzolabellaCommandConstraint ConstraintThatFailed)
         {
             await DataStores.ConstrainmentStore.SaveAsync(new CommandLog(Context.UserContext.User.Id));
-            CCBPathEmbed Builder = new CommandConstrainedByUserIds(Kaia.Bot.Objects.Constants.Strings.EmbedStrings.PathIfNoGuild, Context.UserContext.CommandName);
+            KaiaPathEmbed Builder = new CommandConstrainedByUserIds(Kaia.Bot.Objects.Constants.Strings.EmbedStrings.PathIfNoGuild, Context.UserContext.CommandName);
             if (Context.UserContext.User is SocketGuildUser SUser)
             {
                 if (ConstraintThatFailed is WhitelistPermissionsConstraint WPC)
