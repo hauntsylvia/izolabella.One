@@ -26,7 +26,7 @@ namespace izolabella.One.Objects.Entry
                     await DataStores.StartupStore.SaveAsync(NewInfo);
                 }
             }
-            return new KaiaBotController(new(new(Configuration, false, false, StartupInformation.First().Token)));
+            return new KaiaBotController(new(new(Config: Configuration, AllowBotsOnMessageReceivers: false, GlobalCommands: true, StartupInformation.First().Token)));
         }
     }
 }
