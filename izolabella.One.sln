@@ -7,8 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "izolabella.One", "izolabell
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kaia.Bot", "..\kaia.Bot\Kaia.Bot.csproj", "{38581200-1491-4FAE-BDD2-EA0ED3A350C0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "izolabella.Discord", "..\izolabella.Discord\izolabella.Discord.csproj", "{10BC15E6-27FA-41E7-A6F0-CAF6E5941ED0}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,10 +21,6 @@ Global
 		{38581200-1491-4FAE-BDD2-EA0ED3A350C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{38581200-1491-4FAE-BDD2-EA0ED3A350C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{38581200-1491-4FAE-BDD2-EA0ED3A350C0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{10BC15E6-27FA-41E7-A6F0-CAF6E5941ED0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{10BC15E6-27FA-41E7-A6F0-CAF6E5941ED0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{10BC15E6-27FA-41E7-A6F0-CAF6E5941ED0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{10BC15E6-27FA-41E7-A6F0-CAF6E5941ED0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

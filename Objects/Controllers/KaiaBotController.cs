@@ -6,7 +6,6 @@ using izolabella.Discord.Objects.Parameters;
 using izolabella.One.Objects.Constants;
 using izolabella.One.Objects.Entities;
 using Kaia.Bot.Objects.Discord.Embeds.Bases;
-using Kaia.Bot.Objects.Discord.Embeds.Implementations;
 using Kaia.Bot.Objects.Discord.Embeds.Implementations.CommandConstrained;
 
 namespace izolabella.One.Objects.Controllers
