@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "izolabella.Notion.Test", ".
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "izolabella.Discord", "..\izolabella.Discord\izolabella.Discord.csproj", "{6AA4B5FB-CCA6-45CD-AC28-29EF4DD0BA0A}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "izolabella.Notion", "..\izolabella.Notion\izolabella.Notion\izolabella.Notion\izolabella.Notion.csproj", "{50EB8276-884D-4583-9222-4A23A94161B7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{6AA4B5FB-CCA6-45CD-AC28-29EF4DD0BA0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6AA4B5FB-CCA6-45CD-AC28-29EF4DD0BA0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6AA4B5FB-CCA6-45CD-AC28-29EF4DD0BA0A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50EB8276-884D-4583-9222-4A23A94161B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50EB8276-884D-4583-9222-4A23A94161B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50EB8276-884D-4583-9222-4A23A94161B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50EB8276-884D-4583-9222-4A23A94161B7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
