@@ -9,16 +9,9 @@ namespace izolabella.One
     {
         internal static async Task Main()
         {
-            KaiaBotController InternalController = await EntryPoint.EnterAsync(new()
-            {
-                UseSystemClock = false,
-                MessageCacheSize = 20,
-                AlwaysDownloadUsers = true,
-                AlwaysDownloadDefaultStickers = true,
-                AlwaysResolveStickers = true,
-                UseInteractionSnowflakeDate = false,
-            });
-            await InternalController.StartController();
+            EntryPoint E = new();
+            await E.KaiaController.StartController();
+            await E.KlaraController.StartController();
             await Task.Delay(-1);
         }
     }

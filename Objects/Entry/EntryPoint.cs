@@ -4,29 +4,53 @@ using izolabella.One.Objects.Controllers;
 
 namespace izolabella.One.Objects.Entry
 {
-    internal static class EntryPoint
+    internal class EntryPoint
     {
-        private static async Task<List<KaiaStartupInformation>> GetStartupProfilesAsync()
+        public EntryPoint()
         {
-            return await DataStores.StartupStore.ReadAllAsync<KaiaStartupInformation>();
+            this.KaiaController = new KaiaBotController(new(new(Config: DefaultConfig, AllowBotsOnMessageReceivers: false, GlobalCommands: true, this.Profiles.ElementAt(0).Token)));
+            this.KlaraController = new(new(this.Profiles.ElementAt(1).Token));
         }
 
-        public static async Task<KaiaBotController> EnterAsync(DiscordSocketConfig Configuration)
+        private static DiscordSocketConfig DefaultConfig => new()
         {
-            List<KaiaStartupInformation> StartupInformation = await GetStartupProfilesAsync();
-            if (StartupInformation.Count == 0)
+            UseSystemClock = false,
+            MessageCacheSize = 20,
+            AlwaysDownloadUsers = true,
+            AlwaysDownloadDefaultStickers = true,
+            AlwaysResolveStickers = true,
+            UseInteractionSnowflakeDate = false,
+        };
+
+        public List<StartupProfile> Profiles { get; } = ValidifyStartupProfiles().Result;
+        public KaiaBotController KaiaController { get; }
+        public KlaraBotController KlaraController { get; }
+
+        private static async Task<List<StartupProfile>> GetStartupProfilesAsync()
+        {
+            return await DataStores.StartupStore.ReadAllAsync<StartupProfile>();
+        }
+
+        public static async Task<List<StartupProfile>> ValidifyStartupProfiles(int NumberThereShouldBe = 2)
+        {
+            List<StartupProfile> StartupInformation = await GetStartupProfilesAsync();
+            for(int I = 0; I < NumberThereShouldBe; I++)
             {
-                Console.WriteLine("Write the token.");
-                string? Token = Console.ReadLine();
-                Console.Clear();
-                if (Token != null)
+                if(StartupInformation.ElementAtOrDefault(I) == null)
                 {
-                    KaiaStartupInformation NewInfo = new(DataStores.StartupStore, Token);
-                    StartupInformation.Add(NewInfo);
-                    await DataStores.StartupStore.SaveAsync(NewInfo);
+                    Console.WriteLine($"Write the token for profile {I}.");
+                    string? Token = Console.ReadLine();
+                    Console.Clear();
+                    if (Token != null)
+                    {
+                        StartupProfile NewInfo = new(DataStores.StartupStore, Token);
+                        StartupInformation.Add(NewInfo);
+                        await DataStores.StartupStore.SaveAsync(NewInfo);
+                        StartupInformation.Insert(I, NewInfo);
+                    }
                 }
             }
-            return new KaiaBotController(new(new(Config: Configuration, AllowBotsOnMessageReceivers: false, GlobalCommands: true, StartupInformation.First().Token)));
+            return StartupInformation;
         }
     }
 }

@@ -7,6 +7,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "izolabella.One", "izolabell
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kaia.Bot", "..\kaia.Bot\Kaia.Bot.csproj", "{38581200-1491-4FAE-BDD2-EA0ED3A350C0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Klara.Bot", "..\Klara.Bot\Klara.Bot.csproj", "{FB8C8DA3-27E8-4824-961F-192A6E6B80F5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "izolabella.Notion.Test", "..\izolabella.Notion\izolabella.Notion\izolabella.Notion.Test\izolabella.Notion.Test.csproj", "{3FE605FB-DE78-4468-BE1E-75BDE6DBA79C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "izolabella.Discord", "..\izolabella.Discord\izolabella.Discord.csproj", "{6AA4B5FB-CCA6-45CD-AC28-29EF4DD0BA0A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +27,18 @@ Global
 		{38581200-1491-4FAE-BDD2-EA0ED3A350C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{38581200-1491-4FAE-BDD2-EA0ED3A350C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{38581200-1491-4FAE-BDD2-EA0ED3A350C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB8C8DA3-27E8-4824-961F-192A6E6B80F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB8C8DA3-27E8-4824-961F-192A6E6B80F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB8C8DA3-27E8-4824-961F-192A6E6B80F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB8C8DA3-27E8-4824-961F-192A6E6B80F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FE605FB-DE78-4468-BE1E-75BDE6DBA79C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FE605FB-DE78-4468-BE1E-75BDE6DBA79C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FE605FB-DE78-4468-BE1E-75BDE6DBA79C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FE605FB-DE78-4468-BE1E-75BDE6DBA79C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6AA4B5FB-CCA6-45CD-AC28-29EF4DD0BA0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6AA4B5FB-CCA6-45CD-AC28-29EF4DD0BA0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6AA4B5FB-CCA6-45CD-AC28-29EF4DD0BA0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6AA4B5FB-CCA6-45CD-AC28-29EF4DD0BA0A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
