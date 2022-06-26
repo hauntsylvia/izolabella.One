@@ -34,9 +34,9 @@ namespace izolabella.One.Objects.Entry
         public static async Task<List<StartupProfile>> ValidifyStartupProfiles(int NumberThereShouldBe = 2)
         {
             List<StartupProfile> StartupInformation = await GetStartupProfilesAsync();
-            for(int I = 0; I < NumberThereShouldBe; I++)
+            for (int I = 0; I < NumberThereShouldBe; I++)
             {
-                if(StartupInformation.ElementAtOrDefault(I) == null)
+                if (StartupInformation.ElementAtOrDefault(I) == null)
                 {
                     Console.WriteLine($"Write the token for profile {I}.");
                     string? Token = Console.ReadLine();

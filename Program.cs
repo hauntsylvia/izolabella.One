@@ -1,6 +1,5 @@
 ﻿global using Kaia.Bot.Objects.Clients;
 global using Kaia.Bot.Objects.KaiaStructures.Startup;
-using izolabella.One.Objects.Controllers;
 using izolabella.One.Objects.Entry;
 
 namespace izolabella.One
