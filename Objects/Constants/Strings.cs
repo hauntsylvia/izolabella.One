@@ -8,7 +8,7 @@
         }
         internal static class DataStoreNames
         {
-            internal static string Startup => "Startup Profiles";
+            internal static string Startup => "Controller Profiles";
             internal static string Constrainments => "Constrainments";
         }
         internal static class Responses
