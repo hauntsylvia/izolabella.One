@@ -10,34 +10,41 @@ namespace izolabella.One
     {
         internal static async Task Main()
         {
-            List<ControllerProfile> Profiles = await DataStores.ControllerProfileStore.ReadAllAsync<ControllerProfile>();
-            foreach(IController Controller in KnownControllers)
+            try
             {
-                ControllerProfile? Profile = Profiles.FirstOrDefault(P => P.Alias == Controller.Alias);
-                if(Profile == null)
+                List<ControllerProfile> Profiles = await DataStores.ControllerProfileStore.ReadAllAsync<ControllerProfile>();
+                foreach (IController Controller in KnownControllers)
                 {
-                    if (CheckY(Controller.Alias, $"The profile is requesting a token."))
+                    ControllerProfile? Profile = Profiles.FirstOrDefault(P => P.Alias == Controller.Alias);
+                    if (Profile == null)
                     {
-                        if (GetProtectedNext(Controller.Alias, "Type the token.", out string? Token))
+                        if (CheckY(Controller.Alias, $"The profile is requesting a token."))
                         {
-                            Profile = new(Controller.Alias, Token, CheckY(Controller.Alias, "Should this profile be enabled?"));
-                            await DataStores.ControllerProfileStore.SaveAsync(Profile);
+                            if (GetProtectedNext(Controller.Alias, "Type the token.", out string? Token))
+                            {
+                                Profile = new(Controller.Alias, Token, CheckY(Controller.Alias, "Should this profile be enabled?"));
+                                await DataStores.ControllerProfileStore.SaveAsync(Profile);
+                            }
+                        }
+                        else
+                        {
+                            Write(Controller.Alias, "Skipped.");
                         }
                     }
-                    else
+
+                    if (Profile != null)
                     {
-                        Write(Controller.Alias, "Skipped.");
+                        Write(Controller.Alias, "Starting.");
+                        await Controller.StartAsync(Profile);
+                        Write(Controller.Alias, "Started.");
                     }
                 }
-
-                if(Profile != null)
-                {
-                    Write(Controller.Alias, "Starting.");
-                    await Controller.StartAsync(Profile);
-                    Write(Controller.Alias, "Started.");
-                }
+                await new Objects.Commands.ConsoleCommandHandler().StartAsync();
             }
-            await new Objects.Commands.ConsoleCommandHandler().StartAsync();
+            catch(Exception Ex)
+            {
+                Console.WriteLine(Ex);
+            }
             await Task.Delay(-1);
         }
 
