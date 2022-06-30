@@ -1,5 +1,4 @@
 ﻿global using Kaia.Bot.Objects.Clients;
-global using Kaia.Bot.Objects.KaiaStructures.Startup;
 using izolabella.One.Objects.Constants;
 using izolabella.One.Objects.Controllers.Interfaces;
 using izolabella.One.Objects.Profiles;

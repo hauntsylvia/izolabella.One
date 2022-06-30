@@ -7,13 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "izolabella.One", "izolabell
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kaia.Bot", "..\kaia.Bot\Kaia.Bot.csproj", "{38581200-1491-4FAE-BDD2-EA0ED3A350C0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Klara.Bot", "..\Klara.Bot\Klara.Bot.csproj", "{FB8C8DA3-27E8-4824-961F-192A6E6B80F5}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "izolabella.Notion.Test", "..\izolabella.Notion\izolabella.Notion\izolabella.Notion.Test\izolabella.Notion.Test.csproj", "{3FE605FB-DE78-4468-BE1E-75BDE6DBA79C}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "izolabella.Discord", "..\izolabella.Discord\izolabella.Discord.csproj", "{6AA4B5FB-CCA6-45CD-AC28-29EF4DD0BA0A}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "izolabella.Notion", "..\izolabella.Notion\izolabella.Notion\izolabella.Notion\izolabella.Notion.csproj", "{50EB8276-884D-4583-9222-4A23A94161B7}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{AA1B8C1B-FD4E-48DD-B1B2-7702464D1444}"
 	ProjectSection(SolutionItems) = preProject
@@ -22,7 +16,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "raival.Bot", "..\raival.Bot\raival.Bot.csproj", "{D0E80328-E6AA-4ED1-B387-18D85FC1E639}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "izolabella.Util", "..\izolabella.Util\izolabella.Util.csproj", "{39A5F209-7E4A-4463-932D-0FCBB557A9D7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "izolabella.Util", "..\izolabella.Util\izolabella.Util.csproj", "{39A5F209-7E4A-4463-932D-0FCBB557A9D7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -38,22 +32,10 @@ Global
 		{38581200-1491-4FAE-BDD2-EA0ED3A350C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{38581200-1491-4FAE-BDD2-EA0ED3A350C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{38581200-1491-4FAE-BDD2-EA0ED3A350C0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FB8C8DA3-27E8-4824-961F-192A6E6B80F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FB8C8DA3-27E8-4824-961F-192A6E6B80F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FB8C8DA3-27E8-4824-961F-192A6E6B80F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FB8C8DA3-27E8-4824-961F-192A6E6B80F5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3FE605FB-DE78-4468-BE1E-75BDE6DBA79C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3FE605FB-DE78-4468-BE1E-75BDE6DBA79C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3FE605FB-DE78-4468-BE1E-75BDE6DBA79C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3FE605FB-DE78-4468-BE1E-75BDE6DBA79C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6AA4B5FB-CCA6-45CD-AC28-29EF4DD0BA0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6AA4B5FB-CCA6-45CD-AC28-29EF4DD0BA0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6AA4B5FB-CCA6-45CD-AC28-29EF4DD0BA0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6AA4B5FB-CCA6-45CD-AC28-29EF4DD0BA0A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{50EB8276-884D-4583-9222-4A23A94161B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{50EB8276-884D-4583-9222-4A23A94161B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{50EB8276-884D-4583-9222-4A23A94161B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{50EB8276-884D-4583-9222-4A23A94161B7}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D0E80328-E6AA-4ED1-B387-18D85FC1E639}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D0E80328-E6AA-4ED1-B387-18D85FC1E639}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D0E80328-E6AA-4ED1-B387-18D85FC1E639}.Release|Any CPU.ActiveCfg = Release|Any CPU
