@@ -1,4 +1,5 @@
-﻿using Discord.WebSocket;
+﻿using Discord;
+using Discord.WebSocket;
 
 namespace izolabella.One.Objects.Constants
 {
@@ -12,6 +13,7 @@ namespace izolabella.One.Objects.Constants
             AlwaysDownloadDefaultStickers = true,
             AlwaysResolveStickers = true,
             UseInteractionSnowflakeDate = false,
+            GatewayIntents = GatewayIntents.All
         };
     }
 }

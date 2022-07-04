@@ -23,7 +23,7 @@ namespace izolabella.One.Objects.Controllers.Implementations
         {
             this.Enabled = true;
             this.B = new(new(ConfigDefaults.DefaultConfig, true, true, Profile.DiscordBotToken));
-            this.B.Parameters.CommandHandler.OnCommandConstraint += OnCommandConstraintAsync;
+            this.B.Parameters.CommandHandler.OnCommandConstraint += this.OnCommandConstraintAsync;
             await this.B.Parameters.StartAsync();
         }
 
@@ -35,7 +35,7 @@ namespace izolabella.One.Objects.Controllers.Implementations
 
         private async Task OnCommandConstraintAsync(CommandContext Context, IzolabellaCommandArgument[] Arguments, IIzolabellaCommandConstraint ConstraintThatFailed)
         {
-            KaiaPathEmbed Builder = new CommandConstrainedByUserIds(Kaia.Bot.Objects.Constants.Strings.EmbedStrings.FakePaths.Global, Context.UserContext.CommandName);
+            KaiaPathEmbedRefreshable Builder = new CommandConstrainedByUserIds(Kaia.Bot.Objects.Constants.Strings.EmbedStrings.FakePaths.Global, Context.UserContext.CommandName);
             if (Context.UserContext.User is SocketGuildUser SUser)
             {
                 if (ConstraintThatFailed is WhitelistPermissionsConstraint WPC)
@@ -47,6 +47,7 @@ namespace izolabella.One.Objects.Controllers.Implementations
                     Builder = new CommandConstrainedByRoleIds(Context.UserContext.CommandName, SUser.Guild, RPC.RoleIds);
                 }
             }
+            await Builder.RefreshAsync();
             await Context.UserContext.RespondAsync(
                 embed: Builder.Build(),
                 text: Strings.Responses.CommandConstrained);
