@@ -4,9 +4,9 @@ namespace izolabella.One.Objects.Commands.Inner.Implementations
 {
     internal class Clear : IIzolabellaConsoleCommand
     {
-        string IIzolabellaConsoleCommand.RequiredName => "clear";
+        internal override string RequiredName => "clear";
 
-        Task<string> IIzolabellaConsoleCommand.RunAsync(string[] Args)
+        internal override Task<string> RunAsync(string[] Args)
         {
             Console.Clear();
             return Task.FromResult("Console cleared.");

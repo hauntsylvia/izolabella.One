@@ -59,8 +59,16 @@ namespace izolabella.One
         internal static bool GetNext(string Context, string MessageBefore, out string? Result)
         {
             Console.WriteLine($"[{Context}]: {MessageBefore}");
-            Result = Console.ReadLine();
-            return true;
+            try
+            {
+                Result = Console.ReadLine();
+                return true;
+            }
+            catch(IOException E)
+            {
+                Result = E.Message;
+                return false;
+            }
         }
 
         internal static bool GetProtectedNext(string Context, string MessageBefore, out string Result)

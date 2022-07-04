@@ -24,6 +24,8 @@ namespace izolabella.One.Objects.Commands
             });
         }
 
-        internal List<IIzolabellaConsoleCommand> ConsoleCommands { get; } = BaseImplementationUtil.GetItems<IIzolabellaConsoleCommand>();
+        private readonly List<IIzolabellaConsoleCommand> consoleCommands = BaseImplementationUtil.GetItems<IIzolabellaConsoleCommand>();
+
+        internal IEnumerable<IIzolabellaConsoleCommand> ConsoleCommands => this.consoleCommands.Select<IIzolabellaConsoleCommand, IIzolabellaConsoleCommand>(X => X.WithInitializationAsync(this.consoleCommands.ToArray()).Result);
     }
 }

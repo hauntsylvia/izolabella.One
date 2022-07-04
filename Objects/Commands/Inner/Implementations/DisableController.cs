@@ -5,9 +5,9 @@ namespace izolabella.One.Objects.Commands.Inner.Implementations
 {
     internal class DisableController : IIzolabellaConsoleCommand
     {
-        string IIzolabellaConsoleCommand.RequiredName => "disable";
+        internal override string RequiredName => "disable";
 
-        async Task<string> IIzolabellaConsoleCommand.RunAsync(string[] Args)
+        internal override async Task<string> RunAsync(string[] Args)
         {
             string Alias = Args.ElementAtOrDefault(1) ?? string.Empty;
             if (Alias.ToLower() == "all")
