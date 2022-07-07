@@ -26,6 +26,6 @@ namespace izolabella.One.Objects.Commands
 
         private readonly List<IIzolabellaConsoleCommand> consoleCommands = BaseImplementationUtil.GetItems<IIzolabellaConsoleCommand>();
 
-        internal IEnumerable<IIzolabellaConsoleCommand> ConsoleCommands => this.consoleCommands.Select<IIzolabellaConsoleCommand, IIzolabellaConsoleCommand>(X => X.WithInitializationAsync(this.consoleCommands.ToArray()).Result);
+        internal IEnumerable<IIzolabellaConsoleCommand> ConsoleCommands => this.consoleCommands.Select(X => X.WithInitializationAsync(this.consoleCommands.ToArray()).Result);
     }
 }

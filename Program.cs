@@ -32,7 +32,7 @@ namespace izolabella.One
                         }
                     }
 
-                    if (Profile != null)
+                    if (Profile != null && Profile.ControllerEnabled)
                     {
                         Write(Controller.Alias, "Starting.");
                         await Controller.StartAsync(Profile);
