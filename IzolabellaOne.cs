@@ -44,7 +44,7 @@ namespace izolabella.One
             }
             catch(Exception Ex)
             {
-                Console.WriteLine(Ex);
+                IzolabellaConsole.Write("Main", Ex.ToString());
             }
             await Task.Delay(-1);
         }

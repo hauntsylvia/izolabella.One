@@ -18,7 +18,7 @@ namespace izolabella.One.Objects.Controllers
 
         protected async override Task StartProtectedAsync(ControllerProfile Profile)
         {
-            this.B = new(this, new(ConfigDefaults.DefaultConfig, true, true, Profile.DiscordBotToken));
+            this.B = new(this, new(ConfigDefaults.DefaultConfig, true, true, Profile.Token));
             this.B.Parameters.CommandHandler.OnCommandConstraint += this.OnCommandConstraintAsync;
             await this.B.Parameters.StartAsync();
         }
