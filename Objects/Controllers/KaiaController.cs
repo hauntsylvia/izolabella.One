@@ -4,34 +4,28 @@ using izolabella.Discord.Objects.Constraints.Implementations;
 using izolabella.Discord.Objects.Constraints.Interfaces;
 using izolabella.Discord.Objects.Parameters;
 using izolabella.One.Objects.Constants;
-using izolabella.One.Objects.Controllers.Interfaces;
-using izolabella.One.Objects.Profiles;
+using izolabella.Util.Controllers.Profiles;
 using Kaia.Bot.Objects.Discord.Embeds.Bases;
 using Kaia.Bot.Objects.Discord.Embeds.Implementations.CommandConstrained;
-using RaiVal.Bot.Structures.Clients;
 
-namespace izolabella.One.Objects.Controllers.Implementations
+namespace izolabella.One.Objects.Controllers
 {
-    internal class RaiValController : IController
+    internal class KaiaController : Controller
     {
-        public string Alias => "RaiVal";
+        public override string Alias => "Kaia";
 
-        public bool Enabled { get; private set; } = false;
+        internal KaiaBot? B { get; private set; }
 
-        internal RaiValBot? B { get; private set; }
-
-        async Task IController.StartAsync(ControllerProfile Profile)
+        protected async override Task StartProtectedAsync(ControllerProfile Profile)
         {
-            this.Enabled = true;
-            this.B = new(Profile.DiscordBotToken, ConfigDefaults.DefaultConfig);
-            this.B.Client.OnCommandConstraint += this.OnCommandConstraintAsync;
-            await this.B.StartAsync();
+            this.B = new(this, new(ConfigDefaults.DefaultConfig, true, true, Profile.DiscordBotToken));
+            this.B.Parameters.CommandHandler.OnCommandConstraint += this.OnCommandConstraintAsync;
+            await this.B.Parameters.StartAsync();
         }
 
-        async Task IController.StopAsync()
+        protected async override Task StopProtectedAsync()
         {
-            this.Enabled = false;
-            await (this.B?.StopAsync() ?? Task.CompletedTask);
+            await (this.B?.Parameters.StopAsync() ?? Task.CompletedTask);
         }
 
         private async Task OnCommandConstraintAsync(CommandContext Context, IzolabellaCommandArgument[] Arguments, IIzolabellaCommandConstraint ConstraintThatFailed)

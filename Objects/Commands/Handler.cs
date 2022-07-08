@@ -1,5 +1,6 @@
 ﻿using izolabella.One.Objects.Commands.Inner.Interfaces;
 using izolabella.Util;
+using izolabella.Util.IzolabellaConsole;
 
 namespace izolabella.One.Objects.Commands
 {
@@ -11,13 +12,13 @@ namespace izolabella.One.Objects.Commands
             {
                 while (true)
                 {
-                    if (Program.GetNext("CommandListener", "Awaiting new command.", out string? Res) && Res != null)
+                    if (IzolabellaConsole.GetNext("CommandListener", "Awaiting new command.", out string? Res) && Res != null)
                     {
                         string[] Args = Res.Split(' ');
                         IIzolabellaConsoleCommand? Command = this.ConsoleCommands.FirstOrDefault(C => C.RequiredName == (Args.FirstOrDefault() ?? string.Empty));
                         if(Command != null)
                         {
-                            Program.Write($"CommandListener/{Command.RequiredName}", await Command.RunAsync(Args));
+                            IzolabellaConsole.Write($"CommandListener/{Command.RequiredName}", await Command.RunAsync(Args));
                         }
                     }
                 }

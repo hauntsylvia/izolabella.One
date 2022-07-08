@@ -1,7 +1,9 @@
-﻿using izolabella.One.Objects.Commands.Inner.Interfaces;
+﻿global using izolabella.Util.Controllers;
+global using izolabella.Util.Controllers.Profiles;
+
+using izolabella.One.Objects.Commands.Inner.Interfaces;
 using izolabella.One.Objects.Constants;
-using izolabella.One.Objects.Controllers.Interfaces;
-using izolabella.One.Objects.Profiles;
+using izolabella.Util.IzolabellaConsole;
 
 namespace izolabella.One.Objects.Commands.Inner.Implementations
 {
@@ -12,22 +14,24 @@ namespace izolabella.One.Objects.Commands.Inner.Implementations
         internal override async Task<string> RunAsync(string[] Args)
         {
             string Alias = Args.ElementAtOrDefault(1) ?? string.Empty;
+            bool Enable = IzolabellaConsole.CheckY(this.RequiredName, "Would you like to enable this controller on startup?");
             if (Alias.ToLower() == "all")
             {
-                foreach (IController Controller in Program.KnownControllers)
+                foreach (Controller Controller in IzolabellaOne.KnownControllers)
                 {
                     if (Controller.Enabled)
                     {
                         await Controller.StopAsync();
+                        await Controller.UpdateProfileAsync(DataStores.ControllerProfileStore, Controller.LastProfile, A => A.ControllerEnabled = Enable);
                     }
                 }
                 Console.Clear();
-                await Program.Main();
+                await IzolabellaOne.Main();
                 return "New main created.";
             }
             else
             {
-                IController? C = Program.KnownControllers.FirstOrDefault(KC => KC.Alias.ToLower() == (Args.ElementAtOrDefault(1) ?? string.Empty).ToLower());
+                Controller? C = IzolabellaOne.KnownControllers.FirstOrDefault(KC => KC.Alias.ToLower() == (Args.ElementAtOrDefault(1) ?? string.Empty).ToLower());
                 if (C != null)
                 {
                     ControllerProfile? CProfile = (await DataStores.ControllerProfileStore.ReadAllAsync<ControllerProfile>()).FirstOrDefault(CPrf => CPrf.Alias == C.Alias);
@@ -36,6 +40,7 @@ namespace izolabella.One.Objects.Commands.Inner.Implementations
                         if(!C.Enabled)
                         {
                             await C.StartAsync(CProfile);
+                            await Controller.UpdateProfileAsync(DataStores.ControllerProfileStore, C.LastProfile, A => A.ControllerEnabled = Enable);
                             return "Controller enabled.";
                         }
                         else

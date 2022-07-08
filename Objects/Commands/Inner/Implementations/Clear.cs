@@ -9,7 +9,7 @@ namespace izolabella.One.Objects.Commands.Inner.Implementations
         internal override Task<string> RunAsync(string[] Args)
         {
             Console.Clear();
-            return Task.FromResult("Console cleared.");
+            return Task.FromResult("IzolabellaConsole cleared.");
         }
     }
 }
