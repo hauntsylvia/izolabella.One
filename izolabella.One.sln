@@ -18,7 +18,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RaiVal.Bot", "..\raival.Bot
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "izolabella.Util", "..\izolabella.Util\izolabella.Util.csproj", "{39A5F209-7E4A-4463-932D-0FCBB557A9D7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "izolabella.KawaiiRed.NET", "..\izolabella.KawaiiRed.NET\izolabella.KawaiiRed.NET.csproj", "{806E8E65-16FE-4B14-B49F-FA9A43266E9E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "izolabella.KawaiiRed.NET", "..\izolabella.KawaiiRed.NET\izolabella.KawaiiRed.NET.csproj", "{806E8E65-16FE-4B14-B49F-FA9A43266E9E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "izolabella.Kacena.REST", "..\izolabella.Kacena.REST\KacenaRest\izolabella.Kacena.REST.csproj", "{9343875F-52CC-49D4-B0CC-3474893B57D8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -50,6 +52,10 @@ Global
 		{806E8E65-16FE-4B14-B49F-FA9A43266E9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{806E8E65-16FE-4B14-B49F-FA9A43266E9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{806E8E65-16FE-4B14-B49F-FA9A43266E9E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9343875F-52CC-49D4-B0CC-3474893B57D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9343875F-52CC-49D4-B0CC-3474893B57D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9343875F-52CC-49D4-B0CC-3474893B57D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9343875F-52CC-49D4-B0CC-3474893B57D8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
