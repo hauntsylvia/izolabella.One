@@ -7,7 +7,7 @@ using izolabella.Kaia.Bot.Objects.Discord.Embeds.Bases;
 using izolabella.One.Objects.Constants;
 using izolabella.Util.Controllers.Profiles;
 using izolabella.Kaia.Bot.Objects.Discord.Embeds.Implementations.CommandConstrained;
-using RaiVal.Bot.Structures.Clients;
+using izolabella.RaiVal.Bot.Structures.Clients;
 
 namespace izolabella.One.Objects.Controllers.Bots
 {
