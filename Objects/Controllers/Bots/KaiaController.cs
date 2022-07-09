@@ -3,10 +3,11 @@ using izolabella.Discord.Objects.Arguments;
 using izolabella.Discord.Objects.Constraints.Implementations;
 using izolabella.Discord.Objects.Constraints.Interfaces;
 using izolabella.Discord.Objects.Parameters;
+using izolabella.Kaia.Bot.Objects.Clients;
+using izolabella.Kaia.Bot.Objects.Discord.Embeds.Bases;
 using izolabella.One.Objects.Constants;
 using izolabella.Util.Controllers.Profiles;
-using Kaia.Bot.Objects.Discord.Embeds.Bases;
-using Kaia.Bot.Objects.Discord.Embeds.Implementations.CommandConstrained;
+using izolabella.Kaia.Bot.Objects.Discord.Embeds.Implementations.CommandConstrained;
 
 namespace izolabella.One.Objects.Controllers.Bots
 {

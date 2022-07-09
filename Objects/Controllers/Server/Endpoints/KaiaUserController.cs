@@ -1,7 +1,7 @@
 ﻿using izolabella.Backend.Objects.Structures.Controllers.Arguments;
 using izolabella.Backend.Objects.Structures.Controllers.Bases;
 using izolabella.Backend.Objects.Structures.Controllers.Results;
-using Kaia.Bot.Objects.KaiaStructures.Users;
+using izolabella.Kaia.Bot.Objects.KaiaStructures.Users;
 using System;
 using System.Collections.Generic;
 using System.Linq;
