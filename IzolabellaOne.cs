@@ -43,7 +43,7 @@ namespace izolabella.One
                         }
                         catch (Exception Ex)
                         {
-                            IzolabellaConsole.Write(Controller.Alias, $"There was a problem starting the controller. -> {Ex.Message}");
+                            IzolabellaConsole.Write(Controller.Alias, $"There was a problem starting the controller. -> {Ex}");
 
                         }
                     }
