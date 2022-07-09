@@ -12,13 +12,13 @@ namespace izolabella.One.Objects.Commands
             {
                 while (true)
                 {
-                    if (IzolabellaConsole.GetNext("CommandListener", "Awaiting new command.", out string? Res) && Res != null)
+                    if (IzolabellaConsole.GetNext("Command Listener", "Awaiting new command.", out string? Res) && Res != null)
                     {
                         string[] Args = Res.Split(' ');
                         IIzolabellaConsoleCommand? Command = this.ConsoleCommands.FirstOrDefault(C => C.RequiredName == (Args.FirstOrDefault() ?? string.Empty));
                         if(Command != null)
                         {
-                            IzolabellaConsole.Write($"CommandListener/{Command.RequiredName}", await Command.RunAsync(Args));
+                            IzolabellaConsole.Write($"{Command.RequiredName}", await Command.RunAsync(Args));
                         }
                     }
                 }

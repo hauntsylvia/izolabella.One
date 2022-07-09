@@ -8,19 +8,18 @@ using System.Threading.Tasks;
 
 namespace izolabella.One.Objects.Controllers.Server
 {
-    public class FrontendServe : Controller
+    public class BackendServe : Controller
     {
         public IzolabellaServer? Listener { get; private set; }
 
-        public override string Alias => "Frontend Serve";
+        public override string Alias => "Backend";
 
         public override bool NeedsProfileToken => false;
 
-        protected override Task StartProtectedAsync(ControllerProfile Profile)
+        protected override async Task StartProtectedAsync(ControllerProfile Profile)
         {
             this.Listener = new(Strings.App.ServerUri, this);
-            new Thread(async () => await this.Listener.StartListeningAsync()).Start();
-            return Task.CompletedTask;
+            await this.Listener.StartListeningAsync();
         }
 
         protected override async Task StopProtectedAsync()

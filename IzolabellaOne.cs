@@ -36,8 +36,16 @@ namespace izolabella.One
                     if ((Profile != null && Profile.ControllerEnabled) || !Controller.NeedsProfileToken)
                     {
                         IzolabellaConsole.Write(Controller.Alias, "Starting.");
-                        await Controller.StartAsync(Profile ?? new ControllerProfile(Controller.Alias, string.Empty, true));
-                        IzolabellaConsole.Write(Controller.Alias, "Started.");
+                        try
+                        {
+                            await Controller.StartAsync(Profile ?? new ControllerProfile(Controller.Alias, string.Empty, true));
+                            IzolabellaConsole.Write(Controller.Alias, "Started.");
+                        }
+                        catch (Exception Ex)
+                        {
+                            IzolabellaConsole.Write(Controller.Alias, $"There was a problem starting the controller. -> {Ex.Message}");
+
+                        }
                     }
                 }
                 await new Objects.Commands.ConsoleCommandHandler().StartAsync();

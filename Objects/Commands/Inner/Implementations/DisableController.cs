@@ -18,7 +18,14 @@ namespace izolabella.One.Objects.Commands.Inner.Implementations
                 {
                     if(Controller.Enabled)
                     {
-                        await Controller.StopAsync();
+                        try
+                        {
+                            await Controller.StopAsync();
+                        }
+                        catch
+                        {
+
+                        }
                         await Controller.UpdateProfileAsync(DataStores.ControllerProfileStore, Controller.LastProfile, A => A.ControllerEnabled = Enable);
                     }
                 }
@@ -31,7 +38,14 @@ namespace izolabella.One.Objects.Commands.Inner.Implementations
                 {
                     if (Controller.Enabled)
                     {
-                        await Controller.StopAsync();
+                        try
+                        {
+                            await Controller.StopAsync();
+                        }
+                        catch
+                        {
+
+                        }
                         await Controller.UpdateProfileAsync(DataStores.ControllerProfileStore, Controller.LastProfile, A => A.ControllerEnabled = Enable);
                         return "Controller disabled.";
                     }

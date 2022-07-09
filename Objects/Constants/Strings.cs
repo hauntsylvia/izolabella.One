@@ -11,6 +11,7 @@
         {
             internal static string Startup => "Controller Profiles";
             internal static string Constrainments => "Constrainments";
+            internal static string Exceptions => "Exceptions";
         }
         internal static class Responses
         {

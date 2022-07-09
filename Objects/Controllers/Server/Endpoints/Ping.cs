@@ -12,11 +12,11 @@ namespace izolabella.One.Objects.Controllers.Server.Endpoints
 {
     public class PingController : IzolabellaController
     {
-        public override string Route => "ping";
+        public override string Route => "Ping";
 
         public override Task<IzolabellaAPIControllerResult> RunAsync(IEnumerable<IzolabellaControllerArgument> Arguments)
         {
-            return Task.FromResult<IzolabellaAPIControllerResult>(new("I am alive!"));
+            return Task.FromResult<IzolabellaAPIControllerResult>(new("I am alive! Are you?"));
         }
     }
 }
