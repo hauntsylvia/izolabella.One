@@ -12,6 +12,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "izolabella.RaiVal.Bot", "..\izolabella.RaiVal.Bot\izolabella.RaiVal.Bot.csproj", "{F7050E22-F22B-4F95-84AF-A2FA5E6CB999}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "izolabella.Kaia.Bot", "..\izolabella.Kaia.Bot\izolabella.Kaia.Bot.csproj", "{DDEB6189-6E5E-441F-9590-182ED83CBC55}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "izolabella.KawaiiRed.NET", "..\izolabella.KawaiiRed.NET\izolabella.KawaiiRed.NET.csproj", "{4063A2D3-5908-49BC-B62C-2EC81D7787AE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,6 +30,14 @@ Global
 		{F7050E22-F22B-4F95-84AF-A2FA5E6CB999}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F7050E22-F22B-4F95-84AF-A2FA5E6CB999}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F7050E22-F22B-4F95-84AF-A2FA5E6CB999}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DDEB6189-6E5E-441F-9590-182ED83CBC55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDEB6189-6E5E-441F-9590-182ED83CBC55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDEB6189-6E5E-441F-9590-182ED83CBC55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDEB6189-6E5E-441F-9590-182ED83CBC55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4063A2D3-5908-49BC-B62C-2EC81D7787AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4063A2D3-5908-49BC-B62C-2EC81D7787AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4063A2D3-5908-49BC-B62C-2EC81D7787AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4063A2D3-5908-49BC-B62C-2EC81D7787AE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
