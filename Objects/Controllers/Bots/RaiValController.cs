@@ -7,25 +7,26 @@ using izolabella.One.Objects.Constants;
 using izolabella.Util.Controllers.Profiles;
 using Kaia.Bot.Objects.Discord.Embeds.Bases;
 using Kaia.Bot.Objects.Discord.Embeds.Implementations.CommandConstrained;
+using RaiVal.Bot.Structures.Clients;
 
-namespace izolabella.One.Objects.Controllers
+namespace izolabella.One.Objects.Controllers.Bots
 {
-    internal class KaiaController : Controller
+    internal class RaiValController : Controller
     {
-        public override string Alias => "Kaia";
+        public override string Alias => "RaiVal";
 
-        internal KaiaBot? B { get; private set; }
+        internal RaiValBot? B { get; private set; }
 
-        protected async override Task StartProtectedAsync(ControllerProfile Profile)
+        protected override async Task StartProtectedAsync(ControllerProfile Profile)
         {
-            this.B = new(this, new(ConfigDefaults.DefaultConfig, true, true, Profile.Token));
-            this.B.Parameters.CommandHandler.OnCommandConstraint += this.OnCommandConstraintAsync;
-            await this.B.Parameters.StartAsync();
+            this.B = new(Profile.Token, ConfigDefaults.DefaultConfig);
+            this.B.Client.OnCommandConstraint += this.OnCommandConstraintAsync;
+            await this.B.StartAsync();
         }
 
-        protected async override Task StopProtectedAsync()
+        protected override async Task StopProtectedAsync()
         {
-            await (this.B?.Parameters.StopAsync() ?? Task.CompletedTask);
+            await (this.B?.StopAsync() ?? Task.CompletedTask);
         }
 
         private async Task OnCommandConstraintAsync(CommandContext Context, IzolabellaCommandArgument[] Arguments, IIzolabellaCommandConstraint ConstraintThatFailed)

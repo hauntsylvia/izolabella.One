@@ -17,7 +17,7 @@ namespace izolabella.One
                 foreach (Controller Controller in KnownControllers)
                 {
                     ControllerProfile? Profile = Profiles.FirstOrDefault(P => P.Alias == Controller.Alias);
-                    if (Profile == null)
+                    if (Profile == null && Controller.NeedsProfileToken)
                     {
                         if (IzolabellaConsole.CheckY(Controller.Alias, $"The profile is requesting a token."))
                         {
@@ -33,10 +33,10 @@ namespace izolabella.One
                         }
                     }
 
-                    if (Profile != null && Profile.ControllerEnabled)
+                    if ((Profile != null && Profile.ControllerEnabled) || !Controller.NeedsProfileToken)
                     {
                         IzolabellaConsole.Write(Controller.Alias, "Starting.");
-                        await Controller.StartAsync(Profile);
+                        await Controller.StartAsync(Profile ?? new ControllerProfile(Controller.Alias, string.Empty, true));
                         IzolabellaConsole.Write(Controller.Alias, "Started.");
                     }
                 }

@@ -24,6 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\izolabella.Kacena.REST\KacenaRest\izolabella.Backend.csproj" />
     <ProjectReference Include="..\kaia.Bot\Kaia.Bot.csproj" />
     <ProjectReference Include="..\Klara.Bot\Klara.Bot.csproj" />
     <ProjectReference Include="..\raival.Bot\RaiVal.Bot.csproj" />

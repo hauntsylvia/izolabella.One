@@ -20,7 +20,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "izolabella.Util", "..\izola
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "izolabella.KawaiiRed.NET", "..\izolabella.KawaiiRed.NET\izolabella.KawaiiRed.NET.csproj", "{806E8E65-16FE-4B14-B49F-FA9A43266E9E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "izolabella.Kacena.REST", "..\izolabella.Kacena.REST\KacenaRest\izolabella.Kacena.REST.csproj", "{9343875F-52CC-49D4-B0CC-3474893B57D8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "izolabella.Backend", "..\izolabella.Kacena.REST\KacenaRest\izolabella.Backend.csproj", "{9343875F-52CC-49D4-B0CC-3474893B57D8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
