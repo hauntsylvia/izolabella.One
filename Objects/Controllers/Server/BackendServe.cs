@@ -18,7 +18,7 @@ namespace izolabella.One.Objects.Controllers.Server
 
         protected override async Task StartProtectedAsync(ControllerProfile Profile)
         {
-            this.Listener = new(Strings.App.ServerUri, this);
+            this.Listener = new(Prefixes: Strings.App.ServerUris, Self: this);
             await this.Listener.StartListeningAsync();
         }
 

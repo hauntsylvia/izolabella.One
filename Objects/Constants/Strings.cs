@@ -5,7 +5,11 @@
         internal static class App
         {
             internal static string Name => "CompetitiveCounting.Platform";
-            internal static Uri ServerUri => new("http://izolabella.ml:80/");
+            internal static Uri[] ServerUris => new Uri[]
+            {
+                new("https://izolabella.dev:443/"),
+                new("http://izolabella.dev:80/"),
+            };
         }
         internal static class DataStoreNames
         {

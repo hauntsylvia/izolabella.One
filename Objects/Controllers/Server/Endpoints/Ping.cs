@@ -14,7 +14,7 @@ namespace izolabella.One.Objects.Controllers.Server.Endpoints
     {
         public override string Route => "Ping";
 
-        public override Task<IzolabellaAPIControllerResult> RunAsync(IEnumerable<IzolabellaControllerArgument> Arguments)
+        public override Task<IzolabellaAPIControllerResult> RunAsync(IzolabellaControllerArgument Arguments)
         {
             return Task.FromResult<IzolabellaAPIControllerResult>(new("I am alive! Are you?"));
         }

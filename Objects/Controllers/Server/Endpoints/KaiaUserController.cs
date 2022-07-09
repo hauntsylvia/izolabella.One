@@ -14,9 +14,9 @@ namespace izolabella.One.Objects.Controllers.Server.Endpoints
     {
         public override string Route => "KaiaUser";
 
-        public override Task<IzolabellaAPIControllerResult> RunAsync(IEnumerable<IzolabellaControllerArgument> Arguments)
+        public override Task<IzolabellaAPIControllerResult> RunAsync(IzolabellaControllerArgument Arguments)
         {
-            return (Arguments.FirstOrDefault()?.TryParse(out ulong Id) ?? false) && Id != default
+            return Arguments.TryParse(out ulong Id) && Id != default
                 ? Task.FromResult<IzolabellaAPIControllerResult>(new(new KaiaUser(Id)))
                 : Task.FromResult<IzolabellaAPIControllerResult>(new("die!"));
         }
