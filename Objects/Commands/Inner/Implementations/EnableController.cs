@@ -4,6 +4,7 @@ global using izolabella.Util.Controllers.Profiles;
 using izolabella.One.Objects.Commands.Inner.Interfaces;
 using izolabella.One.Objects.Constants;
 using izolabella.Util.IzolabellaConsole;
+using System.Globalization;
 
 namespace izolabella.One.Objects.Commands.Inner.Implementations
 {
@@ -15,7 +16,7 @@ namespace izolabella.One.Objects.Commands.Inner.Implementations
         {
             string Alias = Args.ElementAtOrDefault(1) ?? string.Empty;
             bool Enable = IzolabellaConsole.CheckY(this.RequiredName, "Would you like to enable this controller on startup?");
-            if (Alias.ToLower() == "all")
+            if (Alias.ToLower(CultureInfo.InvariantCulture) == "all")
             {
                 foreach (Controller Controller in IzolabellaOne.KnownControllers)
                 {
@@ -31,7 +32,7 @@ namespace izolabella.One.Objects.Commands.Inner.Implementations
             }
             else
             {
-                Controller? C = IzolabellaOne.KnownControllers.FirstOrDefault(KC => KC.Alias.ToLower() == (Args.ElementAtOrDefault(1) ?? string.Empty).ToLower());
+                Controller? C = IzolabellaOne.KnownControllers.FirstOrDefault(KC => KC.Alias.ToLower(CultureInfo.InvariantCulture) == (Args.ElementAtOrDefault(1) ?? string.Empty).ToLower(CultureInfo.InvariantCulture));
                 if (C != null)
                 {
                     ControllerProfile? CProfile = (await DataStores.ControllerProfileStore.ReadAllAsync<ControllerProfile>()).FirstOrDefault(CPrf => CPrf.Alias == C.Alias);
