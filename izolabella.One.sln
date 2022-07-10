@@ -5,11 +5,6 @@ VisualStudioVersion = 17.2.32526.322
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "izolabella.One", "izolabella.One.csproj", "{09824A09-0749-48E3-AA2A-57711D4BA2F3}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{AA1B8C1B-FD4E-48DD-B1B2-7702464D1444}"
-	ProjectSection(SolutionItems) = preProject
-		.editorconfig = .editorconfig
-	EndProjectSection
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "izolabella.RaiVal.Bot", "..\izolabella.RaiVal.Bot\izolabella.RaiVal.Bot.csproj", "{F7050E22-F22B-4F95-84AF-A2FA5E6CB999}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "izolabella.Kaia.Bot", "..\izolabella.Kaia.Bot\izolabella.Kaia.Bot.csproj", "{DDEB6189-6E5E-441F-9590-182ED83CBC55}"
