@@ -1,4 +1,6 @@
 ﻿global using izolabella.Kaia.Bot.Objects.Clients;
+using System.Reflection;
+using izolabella.LoFi.Server.Structures.Clients;
 using izolabella.One.Objects.Constants;
 using izolabella.Util;
 using izolabella.Util.Controllers;
@@ -61,7 +63,7 @@ namespace izolabella.One
             await new Objects.Commands.ConsoleCommandHandler().StartAsync();
         }
 
-        internal static List<Controller> KnownControllers { get; } = BaseImplementationUtil.GetItems<Controller>();
+        internal static List<Controller> KnownControllers { get; } = BaseImplementationUtil.GetItems<Controller>(Assemblies: new System.Reflection.Assembly?[] { Assembly.GetAssembly(typeof(IzolabellaOne)) });
 
     }
 }

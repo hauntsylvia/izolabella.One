@@ -18,7 +18,7 @@ namespace izolabella.One.Objects.Commands
                         IIzolabellaConsoleCommand? Command = this.ConsoleCommands.FirstOrDefault(C => C.RequiredName == (Args.FirstOrDefault() ?? string.Empty));
                         if(Command != null)
                         {
-                            IzolabellaConsole.Write($"{Command.RequiredName}", await Command.RunAsync(Args));
+                            IzolabellaConsole.Write($"{Command.RequiredName}", await Command.RunAsync(Args), Command.LowerCase);
                         }
                     }
                 }
