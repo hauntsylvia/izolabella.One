@@ -63,7 +63,7 @@ namespace izolabella.One
             await new Objects.Commands.ConsoleCommandHandler().StartAsync();
         }
 
-        internal static List<Controller> KnownControllers { get; } = BaseImplementationUtil.GetItems<Controller>(Assemblies: new System.Reflection.Assembly?[] { Assembly.GetAssembly(typeof(IzolabellaOne)) });
+        internal static List<Controller> KnownControllers { get; } = BaseImplementationUtil.GetItems<Controller>(Assemblies: new System.Reflection.Assembly?[] { Assembly.GetAssembly(typeof(IzolabellaOne)), Assembly.GetAssembly(typeof(IzolabellaLoFiServer)) });
 
     }
 }
