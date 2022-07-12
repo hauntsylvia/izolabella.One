@@ -13,13 +13,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "izolabella.KawaiiRed.NET", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "izolabella.Backend", "..\izolabella.Backend\izolabella.Backend.csproj", "{ED25A3FD-36A7-4DE4-92D9-0CC6365A8F92}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "izolabella.LoFi.App", "..\izolabella.LoFi\izolabella.LoFi.App.csproj", "{89DCA491-94E7-4D20-AB2D-F7CE43001BC6}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "izolabella.LoFi.Server", "..\izolabella.LoFi.Server\izolabella.LoFi.Server.csproj", "{172176F5-EA6D-4AD0-8646-53F3751F599C}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "izolabella.Music", "..\izolabella.Music\izolabella.Music.csproj", "{A2ED9742-7C15-40A3-A3E5-7EF28B0AE685}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "izolabella.Util", "..\izolabella.Util\izolabella.Util.csproj", "{2FB3F2A5-405B-4623-9331-0D0B7F65D8C7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "izolabella.LoFi.App", "..\izolabella.LoFi\izolabella.LoFi.App.csproj", "{26011B37-A7CF-4286-995F-139E27A67E83}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,12 +47,6 @@ Global
 		{ED25A3FD-36A7-4DE4-92D9-0CC6365A8F92}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ED25A3FD-36A7-4DE4-92D9-0CC6365A8F92}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ED25A3FD-36A7-4DE4-92D9-0CC6365A8F92}.Release|Any CPU.Build.0 = Release|Any CPU
-		{89DCA491-94E7-4D20-AB2D-F7CE43001BC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{89DCA491-94E7-4D20-AB2D-F7CE43001BC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{89DCA491-94E7-4D20-AB2D-F7CE43001BC6}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{89DCA491-94E7-4D20-AB2D-F7CE43001BC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{89DCA491-94E7-4D20-AB2D-F7CE43001BC6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{89DCA491-94E7-4D20-AB2D-F7CE43001BC6}.Release|Any CPU.Deploy.0 = Release|Any CPU
 		{172176F5-EA6D-4AD0-8646-53F3751F599C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{172176F5-EA6D-4AD0-8646-53F3751F599C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{172176F5-EA6D-4AD0-8646-53F3751F599C}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -65,6 +59,12 @@ Global
 		{2FB3F2A5-405B-4623-9331-0D0B7F65D8C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2FB3F2A5-405B-4623-9331-0D0B7F65D8C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2FB3F2A5-405B-4623-9331-0D0B7F65D8C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26011B37-A7CF-4286-995F-139E27A67E83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26011B37-A7CF-4286-995F-139E27A67E83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26011B37-A7CF-4286-995F-139E27A67E83}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{26011B37-A7CF-4286-995F-139E27A67E83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26011B37-A7CF-4286-995F-139E27A67E83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26011B37-A7CF-4286-995F-139E27A67E83}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
