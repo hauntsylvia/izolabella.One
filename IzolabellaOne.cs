@@ -51,7 +51,7 @@ namespace izolabella.One
                     IzolabellaConsole.Write(Controller.Alias, "Starting.");
                     try
                     {
-                        await Controller.StartAsync(Profile ?? new ControllerProfile(Controller.Alias, string.Empty, true));
+                        await Controller.StartAsync(Profile ?? new ControllerProfile(Controller.Alias, string.Empty, true)).ConfigureAwait(false);
                         IzolabellaConsole.Write(Controller.Alias, "Started.");
                     }
                     catch (Exception Ex)
