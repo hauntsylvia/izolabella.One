@@ -1,4 +1,5 @@
-﻿using izolabella.LoFi.Server.Structures.ClientData;
+﻿using izolabella.Music.Constants;
+using izolabella.Music.Structure.ClientData;
 using izolabella.One.Objects.Commands.Inner.Interfaces;
 using izolabella.Util;
 
@@ -13,7 +14,7 @@ namespace izolabella.One.Objects.Commands.Inner.Implementations
         internal override async Task<string> RunAsync(string[] Args)
         {
             string Sec = IdGenerator.CreateSecureString();
-            await LoFi.Server.Structures.Constants.DataStores.SecretsStore.SaveAsync(new Secret(Args.FirstOrDefault() ?? string.Empty, Sec));
+            await DataStores.SecretsStore.SaveAsync(new Secret(Args.FirstOrDefault() ?? string.Empty, Sec));
             return Sec;
 
         }

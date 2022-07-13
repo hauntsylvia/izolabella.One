@@ -1,6 +1,5 @@
-﻿using izolabella.LoFi.Server.Structures.ClientData;
-using izolabella.LoFi.Server.Structures.Music.Artists;
-using izolabella.LoFi.Server.Structures.Music.Songs;
+﻿using izolabella.Music.Structure.Music.Artists.Inner;
+using izolabella.Music.Structure.Music.Songs;
 using izolabella.One.Objects.Commands.Inner.Interfaces;
 using izolabella.Util;
 using Newtonsoft.Json;
@@ -15,7 +14,7 @@ namespace izolabella.One.Objects.Commands.Inner.Implementations
 
         internal override Task<string> RunAsync(string[] Args)
         {
-            return Task.FromResult(JsonConvert.SerializeObject(new IzolabellaSong(new("A", new PronounSet[] { new() }, null), "A", new("Alias", "Security"))));
+            return Task.FromResult(JsonConvert.SerializeObject(new Music.Structure.Music.Songs.IzolabellaSong(new("A", new PronounSet[] { new() }, null), "A", new("Alias", "Security"))));
         }
     }
 }
