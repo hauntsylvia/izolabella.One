@@ -13,14 +13,7 @@ namespace izolabella.One
     {
         internal static async Task Main()
         {
-            try
-            {
-                await StartControllersAsync();
-            }
-            catch(Exception Ex)
-            {
-                IzolabellaConsole.Write("FATAL", Ex.ToString());
-            }
+            await StartControllersAsync();
             await Task.Delay(-1);
         }
 

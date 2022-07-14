@@ -15,7 +15,7 @@ namespace izolabella.One.Objects.Controllers.Server
     {
         public IzolabellaServer? Listener { get; private set; }
 
-        public override string Alias => "Izolabella.One Server";
+        public override string Alias => "Izolabella.One";
 
         public override bool NeedsProfileToken => false;
 

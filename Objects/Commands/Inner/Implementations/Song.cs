@@ -14,7 +14,7 @@ namespace izolabella.One.Objects.Commands.Inner.Implementations
 
         internal override Task<string> RunAsync(string[] Args)
         {
-            return Task.FromResult(JsonConvert.SerializeObject(new Music.Structure.Music.Songs.IzolabellaSong(new("A", new PronounSet[] { new() }, null), "A", new("Alias", "Security"))));
+            return Task.FromResult(JsonConvert.SerializeObject(new Music.Structure.Music.Songs.IzolabellaSong(new("A", new PronounSet[] { new() }, null), "A", new("Alias", "Security"), 2, 48000)));
         }
     }
 }
