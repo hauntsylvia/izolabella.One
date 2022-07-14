@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace izolabella.One.Objects.Controllers.Server.Endpoints
 {
-    public class KaiaUserController : IzolabellaController
+    public class KaiaUserController : IzolabellaEndpoint
     {
         public override string Route => "KaiaUser";
 

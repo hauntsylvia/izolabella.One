@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace izolabella.One.Objects.Controllers.Server.Endpoints
 {
-    public class PingController : IzolabellaController
+    public class PingController : IzolabellaEndpoint
     {
         public override string Route => "Ping";
 
