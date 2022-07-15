@@ -15,7 +15,7 @@ namespace izolabella.One.Objects.Controllers.Bots
     {
         public override string Alias => "Kaia";
 
-        internal KaiaBot? B { get; private set; }
+        public KaiaBot? B { get; private set; }
 
         protected async override Task StartProtectedAsync(ControllerProfile Profile)
         {
