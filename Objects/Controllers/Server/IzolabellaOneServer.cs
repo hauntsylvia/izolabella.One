@@ -27,7 +27,7 @@ namespace izolabella.One.Objects.Controllers.Server
 
         protected override async Task StopProtectedAsync()
         {
-            await (this.Listener?.StopListening() ?? Task.CompletedTask);
+            await (this.Listener?.StopListeningAsync() ?? Task.CompletedTask);
         }
     }
 }
