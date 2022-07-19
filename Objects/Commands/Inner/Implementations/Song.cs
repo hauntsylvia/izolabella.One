@@ -15,7 +15,7 @@ namespace izolabella.One.Objects.Commands.Inner.Implementations
 
         internal override async Task<string> RunAsync(string[] Args)
         {
-            if(ulong.TryParse(Args.FirstOrDefault(), out ulong Id)
+            if(ulong.TryParse(Args.ElementAtOrDefault(1), out ulong Id)
                 && File.Exists(Path.Combine(izolabella.LoFi.Server.Structures.Constants.DataStores.MusicFilesStore.Location.FullName, $"{Id.ToString(CultureInfo.InvariantCulture)}.wav")))
             {
                 IzolabellaSong? Song = await izolabella.LoFi.Server.Structures.Constants.DataStores.SongStore.ReadAsync<IzolabellaSong>(Id);
@@ -23,7 +23,7 @@ namespace izolabella.One.Objects.Commands.Inner.Implementations
             }
             else
             {
-                return "Music file not found.";
+                return IdGenerator.CreateNewId().ToString(CultureInfo.InvariantCulture);
             }
         }
     }
