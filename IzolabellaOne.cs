@@ -24,34 +24,34 @@ namespace izolabella.One
             List<ControllerProfile> Profiles = await DataStores.ControllerProfileStore.ReadAllAsync<ControllerProfile>();
             foreach (Controller Controller in KnownControllers)
             {
-                ControllerProfile? Profile = Profiles.FirstOrDefault(P => P.Alias == Controller.Alias);
+                ControllerProfile? Profile = Profiles.FirstOrDefault(P => P.Alias == Controller.Name);
                 if (Profile == null && Controller.NeedsProfileToken)
                 {
-                    if (IzolabellaConsole.CheckY(Controller.Alias, $"The profile is requesting a token."))
+                    if (IzolabellaConsole.CheckY(Controller.Name, $"The profile is requesting a token."))
                     {
-                        if (IzolabellaConsole.GetProtectedNext(Controller.Alias, "Type the token.", out string? Token))
+                        if (IzolabellaConsole.GetProtectedNext(Controller.Name, "Type the token.", out string? Token))
                         {
-                            Profile = new(Controller.Alias, Token, IzolabellaConsole.CheckY(Controller.Alias, "Should this profile be enabled?"));
+                            Profile = new(Controller.Name, Token, IzolabellaConsole.CheckY(Controller.Name, "Should this profile be enabled?"));
                             await DataStores.ControllerProfileStore.SaveAsync(Profile);
                         }
                     }
                     else
                     {
-                        IzolabellaConsole.Write(Controller.Alias, "Skipped.");
+                        IzolabellaConsole.Write(Controller.Name, "Skipped.");
                     }
                 }
 
                 if ((Profile != null && Profile.ControllerEnabled) || !Controller.NeedsProfileToken)
                 {
-                    IzolabellaConsole.Write(Controller.Alias, "Starting.");
+                    IzolabellaConsole.Write(Controller.Name, "Starting.");
                     try
                     {
-                        await Controller.StartAsync(Profile ?? new ControllerProfile(Controller.Alias, string.Empty, true)).ConfigureAwait(false);
-                        IzolabellaConsole.Write(Controller.Alias, "Started.");
+                        await Controller.StartAsync(Profile ?? new ControllerProfile(Controller.Name, string.Empty, true)).ConfigureAwait(false);
+                        IzolabellaConsole.Write(Controller.Name, "Started.");
                     }
                     catch (Exception Ex)
                     {
-                        IzolabellaConsole.Write(Controller.Alias, $"There was a problem starting the controller. -> {Ex}");
+                        IzolabellaConsole.Write(Controller.Name, $"There was a problem starting the controller. -> {Ex}");
                     }
                 }
             }

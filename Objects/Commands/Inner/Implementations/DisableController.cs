@@ -34,7 +34,7 @@ namespace izolabella.One.Objects.Commands.Inner.Implementations
             }
             else
             {
-                Controller? Controller = IzolabellaOne.KnownControllers.FirstOrDefault(KC => KC.Alias.ToLower(CultureInfo.InvariantCulture) == Alias.ToLower(CultureInfo.InvariantCulture));
+                Controller? Controller = IzolabellaOne.KnownControllers.FirstOrDefault(KC => KC.Name.ToLower(CultureInfo.InvariantCulture) == Alias.ToLower(CultureInfo.InvariantCulture));
                 if (Controller != null)
                 {
                     if (Controller.Enabled)

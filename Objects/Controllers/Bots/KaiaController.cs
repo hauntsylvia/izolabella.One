@@ -13,7 +13,7 @@ namespace izolabella.One.Objects.Controllers.Bots
 {
     internal class KaiaController : Controller
     {
-        public override string Alias => "Kaia";
+        public override string Name => "Kaia";
 
         public KaiaBot? B { get; private set; }
 

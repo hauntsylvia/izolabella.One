@@ -32,10 +32,10 @@ namespace izolabella.One.Objects.Commands.Inner.Implementations
             }
             else
             {
-                Controller? C = IzolabellaOne.KnownControllers.FirstOrDefault(KC => KC.Alias.ToLower(CultureInfo.InvariantCulture) == (Args.ElementAtOrDefault(1) ?? string.Empty).ToLower(CultureInfo.InvariantCulture));
+                Controller? C = IzolabellaOne.KnownControllers.FirstOrDefault(KC => KC.Name.ToLower(CultureInfo.InvariantCulture) == (Args.ElementAtOrDefault(1) ?? string.Empty).ToLower(CultureInfo.InvariantCulture));
                 if (C != null)
                 {
-                    ControllerProfile? CProfile = (await DataStores.ControllerProfileStore.ReadAllAsync<ControllerProfile>()).FirstOrDefault(CPrf => CPrf.Alias == C.Alias);
+                    ControllerProfile? CProfile = (await DataStores.ControllerProfileStore.ReadAllAsync<ControllerProfile>()).FirstOrDefault(CPrf => CPrf.Alias == C.Name);
                     if (CProfile != null)
                     {
                         if(!C.Enabled)
