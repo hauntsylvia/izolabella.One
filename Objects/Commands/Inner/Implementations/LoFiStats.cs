@@ -13,8 +13,8 @@ namespace izolabella.One.Objects.Commands.Inner.Implementations
             {
                 List<string> Display = new()
                 {
-                    $"\n - {Math.Round(Server.Queue.Sum(Song => Song.FileInformation.FileDuration.TotalMinutes), 2)} minutes of music loaded",
-                    $"Currently playing {Server.NowPlaying.Name} by {Server.NowPlaying.AuthorNamesConcat}"
+                    $"\n - {Math.Round(Server.Queue.Sum(Song => Song.FileInformation.FileDuration.TotalMinutes), 2)} minutes of music loaded.",
+                    $"Currently playing {Server.NowPlaying.Name}."
                 };
                 return Task.FromResult(string.Join("\n - ", Display));
             }
