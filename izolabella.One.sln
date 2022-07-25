@@ -21,7 +21,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "izolabella.Util", "..\izola
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "izolabella.LoFi.App", "..\izolabella.LoFi\izolabella.LoFi.App.csproj", "{26011B37-A7CF-4286-995F-139E27A67E83}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "izolabella.Maui.Util", "..\izolabella.Maui.Util\izolabella.Maui.Util.csproj", "{84A5ED0C-8828-4571-9049-55FE63D52D4C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "izolabella.Maui.Util", "..\izolabella.Maui.Util\izolabella.Maui.Util.csproj", "{84A5ED0C-8828-4571-9049-55FE63D52D4C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Music", "Music", "{35FED09C-3E00-40CB-BC6B-BF7F535499F6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Discord", "Discord", "{E0A360EF-3769-4294-83D4-B818A29D8893}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -74,6 +78,13 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F7050E22-F22B-4F95-84AF-A2FA5E6CB999} = {E0A360EF-3769-4294-83D4-B818A29D8893}
+		{DDEB6189-6E5E-441F-9590-182ED83CBC55} = {E0A360EF-3769-4294-83D4-B818A29D8893}
+		{172176F5-EA6D-4AD0-8646-53F3751F599C} = {35FED09C-3E00-40CB-BC6B-BF7F535499F6}
+		{A2ED9742-7C15-40A3-A3E5-7EF28B0AE685} = {35FED09C-3E00-40CB-BC6B-BF7F535499F6}
+		{26011B37-A7CF-4286-995F-139E27A67E83} = {35FED09C-3E00-40CB-BC6B-BF7F535499F6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EC60B38C-6755-4F2D-8838-A10E51261FA6}
