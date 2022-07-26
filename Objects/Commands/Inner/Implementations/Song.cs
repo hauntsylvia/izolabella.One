@@ -1,5 +1,4 @@
 ﻿using System.Globalization;
-using izolabella.Music.Structure.Music.Artists.Inner;
 using izolabella.Music.Structure.Music.Songs;
 using izolabella.One.Objects.Commands.Inner.Interfaces;
 using izolabella.Util;
