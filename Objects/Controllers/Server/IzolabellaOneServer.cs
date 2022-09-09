@@ -9,25 +9,24 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace izolabella.One.Objects.Controllers.Server
+namespace izolabella.One.Objects.Controllers.Server;
+
+public class IzolabellaOneServer : Controller
 {
-    public class IzolabellaOneServer : Controller
+    public IzolabellaServer? Listener { get; private set; }
+
+    public override string Name => "Izolabella.One";
+
+    public override bool NeedsProfileToken => false;
+
+    protected override async Task StartProtectedAsync(ControllerProfile Profile)
     {
-        public IzolabellaServer? Listener { get; private set; }
+        this.Listener = new(Prefixes: Strings.App.KaiaUris, Self: this, AssembliesToLoadFrom: new[] { Assembly.GetAssembly(typeof(KaiaUserController)) });
+        await this.Listener.StartListeningAsync();
+    }
 
-        public override string Name => "Izolabella.One";
-
-        public override bool NeedsProfileToken => false;
-
-        protected override async Task StartProtectedAsync(ControllerProfile Profile)
-        {
-            this.Listener = new(Prefixes: Strings.App.KaiaUris, Self: this, AssembliesToLoadFrom: new[] { Assembly.GetAssembly(typeof(KaiaUserController)) });
-            await this.Listener.StartListeningAsync();
-        }
-
-        protected override async Task StopProtectedAsync()
-        {
-            await (this.Listener?.StopListeningAsync() ?? Task.CompletedTask);
-        }
+    protected override async Task StopProtectedAsync()
+    {
+        await (this.Listener?.StopListeningAsync() ?? Task.CompletedTask);
     }
 }

@@ -8,17 +8,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace izolabella.One.Objects.Controllers.Server.Endpoints
-{
-    public class KaiaUserController : IzolabellaEndpoint
-    {
-        public override string Route => "KaiaUser";
+namespace izolabella.One.Objects.Controllers.Server.Endpoints;
 
-        public override Task<IzolabellaAPIControllerResult> RunAsync(IzolabellaControllerArgument Arguments)
-        {
-            return Arguments.TryParse(out ulong Id) && Id != default
-                ? Task.FromResult<IzolabellaAPIControllerResult>(new(new KaiaUser(Id)))
-                : Task.FromResult<IzolabellaAPIControllerResult>(new("die!"));
-        }
+public class KaiaUserController : IzolabellaEndpoint
+{
+    public override string Route => "KaiaUser";
+
+    public override Task<IzolabellaAPIControllerResult> RunAsync(IzolabellaControllerArgument Arguments)
+    {
+        return Arguments.TryParse(out ulong Id) && Id != default
+            ? Task.FromResult<IzolabellaAPIControllerResult>(new(new KaiaUser(Id)))
+            : Task.FromResult<IzolabellaAPIControllerResult>(new("die!"));
     }
 }
