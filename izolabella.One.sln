@@ -44,6 +44,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "izolabella.Medicine", "..\izolabella.DiscordToNotion\izolabella.Medicine.csproj", "{17D2EA58-0A80-4297-AD5E-D13C734FE199}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -108,6 +110,10 @@ Global
 		{5CD468BC-58F7-40F5-87F1-AC4E7A6D8164}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5CD468BC-58F7-40F5-87F1-AC4E7A6D8164}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5CD468BC-58F7-40F5-87F1-AC4E7A6D8164}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17D2EA58-0A80-4297-AD5E-D13C734FE199}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17D2EA58-0A80-4297-AD5E-D13C734FE199}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17D2EA58-0A80-4297-AD5E-D13C734FE199}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17D2EA58-0A80-4297-AD5E-D13C734FE199}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -126,6 +132,7 @@ Global
 		{0DC9F720-CDE0-439A-983C-B55762D7E4FC} = {E0A360EF-3769-4294-83D4-B818A29D8893}
 		{9E0F7419-6DF9-43BE-80B5-1C4FDEBAF2AE} = {E0A360EF-3769-4294-83D4-B818A29D8893}
 		{5CD468BC-58F7-40F5-87F1-AC4E7A6D8164} = {2BF183D3-0772-40B2-812A-9FBA99C0C6BA}
+		{17D2EA58-0A80-4297-AD5E-D13C734FE199} = {2BF183D3-0772-40B2-812A-9FBA99C0C6BA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EC60B38C-6755-4F2D-8838-A10E51261FA6}

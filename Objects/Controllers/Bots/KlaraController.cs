@@ -20,7 +20,7 @@ internal class KlaraController : Controller
 
     protected override async Task StartProtectedAsync(ControllerProfile Profile)
     {
-        this.B = new(Profile.Token);
+        this.B = new(this, Profile.Token);
         this.B.CommandHandler.OnCommandConstraint += this.OnCommandConstraintAsync;
         await this.B.StartAsync();
     }
