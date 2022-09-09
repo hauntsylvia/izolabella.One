@@ -33,6 +33,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Notes", "Notes", "{BEC4093C
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "izolabella.Storage", "..\izolabella.Storage\izolabella.Storage.csproj", "{63FA12EE-33C7-4C84-BA4E-7B38BAFF5C35}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "izolabella.Klara.Bot", "..\izolabella.Klara.Bot\izolabella.Klara.Bot.csproj", "{0DC9F720-CDE0-439A-983C-B55762D7E4FC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "izolabella.Discord", "..\izolabella.Discord\izolabella.Discord.csproj", "{9E0F7419-6DF9-43BE-80B5-1C4FDEBAF2AE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "izolabella.Notion", "..\izolabella.Notion\izolabella.Notion\izolabella.Notion\izolabella.Notion.csproj", "{5CD468BC-58F7-40F5-87F1-AC4E7A6D8164}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{814841DD-25C4-4BB0-80D3-1E0E1A740BFF}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -85,6 +96,18 @@ Global
 		{63FA12EE-33C7-4C84-BA4E-7B38BAFF5C35}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{63FA12EE-33C7-4C84-BA4E-7B38BAFF5C35}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{63FA12EE-33C7-4C84-BA4E-7B38BAFF5C35}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0DC9F720-CDE0-439A-983C-B55762D7E4FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DC9F720-CDE0-439A-983C-B55762D7E4FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DC9F720-CDE0-439A-983C-B55762D7E4FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DC9F720-CDE0-439A-983C-B55762D7E4FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E0F7419-6DF9-43BE-80B5-1C4FDEBAF2AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E0F7419-6DF9-43BE-80B5-1C4FDEBAF2AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E0F7419-6DF9-43BE-80B5-1C4FDEBAF2AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E0F7419-6DF9-43BE-80B5-1C4FDEBAF2AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5CD468BC-58F7-40F5-87F1-AC4E7A6D8164}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CD468BC-58F7-40F5-87F1-AC4E7A6D8164}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CD468BC-58F7-40F5-87F1-AC4E7A6D8164}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CD468BC-58F7-40F5-87F1-AC4E7A6D8164}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -100,6 +123,9 @@ Global
 		{26011B37-A7CF-4286-995F-139E27A67E83} = {35FED09C-3E00-40CB-BC6B-BF7F535499F6}
 		{84A5ED0C-8828-4571-9049-55FE63D52D4C} = {2BF183D3-0772-40B2-812A-9FBA99C0C6BA}
 		{63FA12EE-33C7-4C84-BA4E-7B38BAFF5C35} = {2BF183D3-0772-40B2-812A-9FBA99C0C6BA}
+		{0DC9F720-CDE0-439A-983C-B55762D7E4FC} = {E0A360EF-3769-4294-83D4-B818A29D8893}
+		{9E0F7419-6DF9-43BE-80B5-1C4FDEBAF2AE} = {E0A360EF-3769-4294-83D4-B818A29D8893}
+		{5CD468BC-58F7-40F5-87F1-AC4E7A6D8164} = {2BF183D3-0772-40B2-812A-9FBA99C0C6BA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EC60B38C-6755-4F2D-8838-A10E51261FA6}

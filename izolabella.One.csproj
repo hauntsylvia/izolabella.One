@@ -28,6 +28,7 @@
   <ItemGroup>
     <ProjectReference Include="..\izolabella.Backend\izolabella.Backend.csproj" />
     <ProjectReference Include="..\izolabella.Kaia.Bot\izolabella.Kaia.Bot.csproj" />
+    <ProjectReference Include="..\izolabella.Klara.Bot\izolabella.Klara.Bot.csproj" />
     <ProjectReference Include="..\izolabella.LoFi.Server\izolabella.LoFi.Server.csproj" />
     <ProjectReference Include="..\izolabella.RaiVal.Bot\izolabella.RaiVal.Bot.csproj" />
   </ItemGroup>
