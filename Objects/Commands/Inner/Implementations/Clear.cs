@@ -2,7 +2,7 @@
 
 namespace izolabella.One.Objects.Commands.Inner.Implementations
 {
-    internal class Clear : IIzolabellaConsoleCommand
+    internal sealed class  Clear : IIzolabellaConsoleCommand
     {
         internal override string RequiredName => "clear";
 

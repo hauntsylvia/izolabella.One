@@ -5,7 +5,7 @@ using System.Globalization;
 
 namespace izolabella.One.Objects.Commands.Inner.Implementations
 {
-    internal class DisableController : IIzolabellaConsoleCommand
+    internal sealed class  DisableController : IIzolabellaConsoleCommand
     {
         internal override string RequiredName => "disable";
 

@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace izolabella.One.Objects.Commands.Inner.Implementations
 {
-    internal class Song : IIzolabellaConsoleCommand
+    internal sealed class  Song : IIzolabellaConsoleCommand
     {
         internal override string RequiredName => "song";
 

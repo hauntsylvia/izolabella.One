@@ -11,7 +11,7 @@ using izolabella.Kaia.Bot.Objects.Discord.Embeds.Implementations.CommandConstrai
 
 namespace izolabella.One.Objects.Controllers.Bots
 {
-    internal class KaiaController : Controller
+    internal sealed class  KaiaController : Controller
     {
         public override string Name => "Kaia";
 

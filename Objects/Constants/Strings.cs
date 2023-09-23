@@ -7,7 +7,7 @@
             internal static string Name => "CompetitiveCounting.Platform";
             internal static Uri[] KaiaUris => new Uri[]
             {
-            new("https://izolabella.dev:443/")
+                new("https://izolabella.dev:443/")
             };
         }
         internal static class DataStoreNames

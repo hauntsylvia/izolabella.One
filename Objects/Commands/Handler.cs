@@ -5,7 +5,7 @@ using izolabella.Util.IzolabellaConsole;
 
 namespace izolabella.One.Objects.Commands
 {
-    internal class ConsoleCommandHandler
+    internal sealed class  ConsoleCommandHandler
     {
         internal async Task StartAsync()
         {

@@ -2,7 +2,7 @@
 
 namespace izolabella.One.Objects.Commands.Inner.Implementations
 {
-    internal class Help : IIzolabellaConsoleCommand
+    internal sealed class  Help : IIzolabellaConsoleCommand
     {
         internal override string RequiredName => "help";
 

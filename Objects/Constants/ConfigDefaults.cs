@@ -3,7 +3,7 @@ using Discord.WebSocket;
 
 namespace izolabella.One.Objects.Constants
 {
-    internal class ConfigDefaults
+    internal sealed class  ConfigDefaults
     {
         internal static DiscordSocketConfig DefaultConfig => new()
         {

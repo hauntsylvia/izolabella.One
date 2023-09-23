@@ -11,7 +11,7 @@ using izolabella.RaiVal.Bot.Structures.Clients;
 
 namespace izolabella.One.Objects.Controllers.Bots
 {
-    internal class RaiValController : Controller
+    internal sealed class  RaiValController : Controller
     {
         public override string Name => "RaiVal";
 

@@ -8,7 +8,7 @@ using System.Globalization;
 
 namespace izolabella.One.Objects.Commands.Inner.Implementations
 {
-    internal class EnableController : IIzolabellaConsoleCommand
+    internal sealed class  EnableController : IIzolabellaConsoleCommand
     {
         internal override string RequiredName => "enable";
 

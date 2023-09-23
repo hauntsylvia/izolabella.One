@@ -5,7 +5,7 @@ using izolabella.Util;
 
 namespace izolabella.One.Objects.Commands.Inner.Implementations
 {
-    internal class Security : IIzolabellaConsoleCommand
+    internal sealed class  Security : IIzolabellaConsoleCommand
     {
         internal override string RequiredName => "security";
 

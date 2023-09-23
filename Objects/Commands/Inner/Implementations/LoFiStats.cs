@@ -3,7 +3,7 @@ using izolabella.One.Objects.Commands.Inner.Interfaces;
 
 namespace izolabella.One.Objects.Commands.Inner.Implementations
 {
-    internal class LoFiStats : IIzolabellaConsoleCommand
+    internal sealed class  LoFiStats : IIzolabellaConsoleCommand
     {
         internal override string RequiredName => "LoFiStats";
 
