@@ -10,43 +10,44 @@ using izolabella.Kaia.Bot.Objects.Discord.Embeds.Implementations.CommandConstrai
 using izolabella.RaiVal.Bot.Structures.Clients;
 using Klara.Bot.Objects.Clients;
 
-namespace izolabella.One.Objects.Controllers.Bots;
-
-internal class KlaraController : Controller
+namespace izolabella.One.Objects.Controllers.Bots
 {
-    public override string Name => "Klara";
-
-    internal KlaraBot? B { get; private set; }
-
-    protected override async Task StartProtectedAsync(ControllerProfile Profile)
+    internal class KlaraController : Controller
     {
-        this.B = new(this, Profile.Token);
-        this.B.CommandHandler.OnCommandConstraint += this.OnCommandConstraintAsync;
-        await this.B.StartAsync();
-    }
+        public override string Name => "Klara";
 
-    protected override async Task StopProtectedAsync()
-    {
-        await (this.B?.StopAsync() ?? Task.CompletedTask);
-    }
+        internal KlaraBot? B { get; private set; }
 
-    private async Task OnCommandConstraintAsync(CommandContext Context, IzolabellaCommandArgument[] Arguments, IIzolabellaCommandConstraint ConstraintThatFailed)
-    {
-        KaiaPathEmbedRefreshable Builder = new CommandConstrainedByUserIds(Kaia.Bot.Objects.Constants.Strings.EmbedStrings.FakePaths.Global, Context.UserContext.CommandName);
-        if (Context.UserContext.User is SocketGuildUser SUser)
+        protected override async Task StartProtectedAsync(ControllerProfile Profile)
         {
-            if (ConstraintThatFailed is WhitelistPermissionsConstraint WPC)
-            {
-                Builder = new CommandConstrainedByPermissions(SUser.Guild.Name, Context.UserContext.CommandName, SUser.GuildPermissions, WPC.Permissions);
-            }
-            else if (ConstraintThatFailed is WhitelistRolesConstraint RPC)
-            {
-                Builder = new CommandConstrainedByRoleIds(Context.UserContext.CommandName, SUser.Guild, RPC.RoleIds);
-            }
+            this.B = new(this, Profile.Token);
+            this.B.CommandHandler.OnCommandConstraint += this.OnCommandConstraintAsync;
+            await this.B.StartAsync();
         }
-        await Builder.RefreshAsync();
-        await Context.UserContext.RespondAsync(
-            embed: Builder.Build(),
-            text: Strings.Responses.CommandConstrained);
+
+        protected override async Task StopProtectedAsync()
+        {
+            await (this.B?.StopAsync() ?? Task.CompletedTask);
+        }
+
+        private async Task OnCommandConstraintAsync(CommandContext Context, IzolabellaCommandArgument[] Arguments, IIzolabellaCommandConstraint ConstraintThatFailed)
+        {
+            KaiaPathEmbedRefreshable Builder = new CommandConstrainedByUserIds(Kaia.Bot.Objects.Constants.Strings.EmbedStrings.FakePaths.Global, Context.UserContext.CommandName);
+            if (Context.UserContext.User is SocketGuildUser SUser)
+            {
+                if (ConstraintThatFailed is WhitelistPermissionsConstraint WPC)
+                {
+                    Builder = new CommandConstrainedByPermissions(SUser.Guild.Name, Context.UserContext.CommandName, SUser.GuildPermissions, WPC.Permissions);
+                }
+                else if (ConstraintThatFailed is WhitelistRolesConstraint RPC)
+                {
+                    Builder = new CommandConstrainedByRoleIds(Context.UserContext.CommandName, SUser.Guild, RPC.RoleIds);
+                }
+            }
+            await Builder.RefreshAsync();
+            await Context.UserContext.RespondAsync(
+                embed: Builder.Build(),
+                text: Strings.Responses.CommandConstrained);
+        }
     }
 }

@@ -1,18 +1,19 @@
 ﻿using Discord;
 using Discord.WebSocket;
 
-namespace izolabella.One.Objects.Constants;
-
-internal class ConfigDefaults
+namespace izolabella.One.Objects.Constants
 {
-    internal static DiscordSocketConfig DefaultConfig => new()
+    internal class ConfigDefaults
     {
-        UseSystemClock = false,
-        MessageCacheSize = 20,
-        AlwaysDownloadUsers = true,
-        AlwaysDownloadDefaultStickers = true,
-        AlwaysResolveStickers = true,
-        UseInteractionSnowflakeDate = false,
-        GatewayIntents = GatewayIntents.All
-    };
+        internal static DiscordSocketConfig DefaultConfig => new()
+        {
+            UseSystemClock = false,
+            MessageCacheSize = 20,
+            AlwaysDownloadUsers = true,
+            AlwaysDownloadDefaultStickers = true,
+            AlwaysResolveStickers = true,
+            UseInteractionSnowflakeDate = false,
+            GatewayIntents = GatewayIntents.All
+        };
+    }
 }

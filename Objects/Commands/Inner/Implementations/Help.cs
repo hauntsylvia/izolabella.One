@@ -1,18 +1,19 @@
 ﻿using izolabella.One.Objects.Commands.Inner.Interfaces;
 
-namespace izolabella.One.Objects.Commands.Inner.Implementations;
-
-internal class Help : IIzolabellaConsoleCommand
+namespace izolabella.One.Objects.Commands.Inner.Implementations
 {
-    internal override string RequiredName => "help";
-
-    internal override Task<string> RunAsync(string[] Args)
+    internal class Help : IIzolabellaConsoleCommand
     {
-        string A = string.Empty;
-        foreach(IIzolabellaConsoleCommand Command in this.Commands)
+        internal override string RequiredName => "help";
+
+        internal override Task<string> RunAsync(string[] Args)
         {
-            A += $"{(Command == this.Commands.First() ? "\n" : string.Empty)}{Command.RequiredName}{(Command != this.Commands.Last() ? "\n" : string.Empty)}";
+            string A = string.Empty;
+            foreach (IIzolabellaConsoleCommand Command in this.Commands)
+            {
+                A += $"{(Command == this.Commands.First() ? "\n" : string.Empty)}{Command.RequiredName}{(Command != this.Commands.Last() ? "\n" : string.Empty)}";
+            }
+            return Task.FromResult(A);
         }
-        return Task.FromResult(A);
     }
 }

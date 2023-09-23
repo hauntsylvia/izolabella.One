@@ -3,19 +3,20 @@ using izolabella.Music.Structure.ClientData;
 using izolabella.One.Objects.Commands.Inner.Interfaces;
 using izolabella.Util;
 
-namespace izolabella.One.Objects.Commands.Inner.Implementations;
-
-internal class Security : IIzolabellaConsoleCommand
+namespace izolabella.One.Objects.Commands.Inner.Implementations
 {
-    internal override string RequiredName => "security";
-
-    internal override bool LowerCase => false;
-
-    internal override async Task<string> RunAsync(string[] Args)
+    internal class Security : IIzolabellaConsoleCommand
     {
-        string Sec = IdGenerator.CreateSecureString();
-        await DataStores.SecretsStore.SaveAsync(new Secret(Args.FirstOrDefault() ?? string.Empty, Sec));
-        return Sec;
+        internal override string RequiredName => "security";
 
+        internal override bool LowerCase => false;
+
+        internal override async Task<string> RunAsync(string[] Args)
+        {
+            string Sec = IdGenerator.CreateSecureString();
+            await DataStores.SecretsStore.SaveAsync(new Secret(Args.FirstOrDefault() ?? string.Empty, Sec));
+            return Sec;
+
+        }
     }
 }

@@ -8,14 +8,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace izolabella.One.Objects.Controllers.Server.Endpoints;
-
-public class PingController : IzolabellaEndpoint
+namespace izolabella.One.Objects.Controllers.Server.Endpoints
 {
-    public override string Route => "Ping";
-
-    public override Task<IzolabellaAPIControllerResult> RunAsync(IzolabellaControllerArgument Arguments)
+    public class PingController : IzolabellaEndpoint
     {
-        return Task.FromResult<IzolabellaAPIControllerResult>(new("I am alive! Are you?"));
+        public override string Route => "Ping";
+
+        public override Task<IzolabellaAPIControllerResult> RunAsync(IzolabellaControllerArgument Arguments)
+        {
+            return Task.FromResult<IzolabellaAPIControllerResult>(new("I am alive! Are you?"));
+        }
     }
 }

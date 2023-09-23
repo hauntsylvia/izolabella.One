@@ -3,61 +3,62 @@ using izolabella.One.Objects.Constants;
 using izolabella.Util.IzolabellaConsole;
 using System.Globalization;
 
-namespace izolabella.One.Objects.Commands.Inner.Implementations;
-
-internal class DisableController : IIzolabellaConsoleCommand
+namespace izolabella.One.Objects.Commands.Inner.Implementations
 {
-    internal override string RequiredName => "disable";
-
-    internal override async Task<string> RunAsync(string[] Args)
+    internal class DisableController : IIzolabellaConsoleCommand
     {
-        string Alias = Args.ElementAtOrDefault(1) ?? string.Empty;
-        bool Enable = IzolabellaConsole.CheckY(this.RequiredName, "Would you like to enable this controller on startup?");
-        if (Alias.ToLower(CultureInfo.InvariantCulture) == "all")
-        {
-            foreach(Controller Controller in IzolabellaOne.KnownControllers)
-            {
-                if(Controller.Enabled)
-                {
-                    try
-                    {
-                        await Controller.StopAsync();
-                    }
-                    catch
-                    {
+        internal override string RequiredName => "disable";
 
-                    }
-                    await Controller.UpdateProfileAsync(DataStores.ControllerProfileStore, Controller.LastProfile, A => A.ControllerEnabled = Enable);
-                }
-            }
-            return "**  All  ** controllers disabled.";
-        }
-        else
+        internal override async Task<string> RunAsync(string[] Args)
         {
-            Controller? Controller = IzolabellaOne.KnownControllers.FirstOrDefault(KC => KC.Name.ToLower(CultureInfo.InvariantCulture) == Alias.ToLower(CultureInfo.InvariantCulture));
-            if (Controller != null)
+            string Alias = Args.ElementAtOrDefault(1) ?? string.Empty;
+            bool Enable = IzolabellaConsole.CheckY(this.RequiredName, "Would you like to enable this controller on startup?");
+            if (Alias.ToLower(CultureInfo.InvariantCulture) == "all")
             {
-                if (Controller.Enabled)
+                foreach (Controller Controller in IzolabellaOne.KnownControllers)
                 {
-                    try
+                    if (Controller.Enabled)
                     {
-                        await Controller.StopAsync();
-                    }
-                    catch
-                    {
+                        try
+                        {
+                            await Controller.StopAsync();
+                        }
+                        catch
+                        {
 
+                        }
+                        await Controller.UpdateProfileAsync(DataStores.ControllerProfileStore, Controller.LastProfile, A => A.ControllerEnabled = Enable);
                     }
-                    await Controller.UpdateProfileAsync(DataStores.ControllerProfileStore, Controller.LastProfile, A => A.ControllerEnabled = Enable);
-                    return "Controller disabled.";
                 }
-                else
-                {
-                    return "Controller already disabled.";
-                }
+                return "**  All  ** controllers disabled.";
             }
             else
             {
-                return "No controller matching the alias provided was found.";
+                Controller? Controller = IzolabellaOne.KnownControllers.FirstOrDefault(KC => KC.Name.ToLower(CultureInfo.InvariantCulture) == Alias.ToLower(CultureInfo.InvariantCulture));
+                if (Controller != null)
+                {
+                    if (Controller.Enabled)
+                    {
+                        try
+                        {
+                            await Controller.StopAsync();
+                        }
+                        catch
+                        {
+
+                        }
+                        await Controller.UpdateProfileAsync(DataStores.ControllerProfileStore, Controller.LastProfile, A => A.ControllerEnabled = Enable);
+                        return "Controller disabled.";
+                    }
+                    else
+                    {
+                        return "Controller already disabled.";
+                    }
+                }
+                else
+                {
+                    return "No controller matching the alias provided was found.";
+                }
             }
         }
     }
