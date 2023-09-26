@@ -21,7 +21,7 @@ namespace izolabella.One.Objects.Controllers.Server
 
         protected override async Task StartProtectedAsync(ControllerProfile Profile)
         {
-            this.Listener = new(Prefixes: [new Uri("http://localhost/")] /*Strings.App.KaiaUris*/, Self: this, AssembliesToLoadFrom: new[] { Assembly.GetAssembly(typeof(KaiaUserController)) });
+            this.Listener = new(Prefixes: Strings.App.KaiaUris, Self: this, AssembliesToLoadFrom: new[] { Assembly.GetAssembly(typeof(KaiaUserController)) });
             await this.Listener.StartListeningAsync();
         }
 
